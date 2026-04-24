@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview — Hero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0a0a;
+  --text: #f0ede8;
+  --text-muted: rgba(240,237,232,0.5);
+  --vinho: #9A3545;
+  --linha: rgba(240,237,232,0.08);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 64px;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 500; color: var(--text);
+  text-decoration: none; letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--vinho); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; letter-spacing: 0.03em; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  font-size: 13px; font-weight: 500;
+  padding: 9px 22px;
+  border: 1px solid rgba(240,237,232,0.2);
+  border-radius: 99px;
+  color: var(--text);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.nav-cta:hover { background: rgba(240,237,232,0.07); border-color: rgba(240,237,232,0.4); }
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* FUMAÇA */
+.smoke { position: absolute; inset: 0; pointer-events: none; }
+.smoke-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0;
+  animation: rise ease-in-out infinite;
+}
+.s1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(ellipse, rgba(154,53,69,0.18) 0%, transparent 70%);
+  left: 10%; bottom: -10%;
+  animation-duration: 12s; animation-delay: 0s;
+}
+.s2 {
+  width: 700px; height: 600px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.04) 0%, transparent 70%);
+  left: 30%; bottom: -20%;
+  animation-duration: 16s; animation-delay: 2s;
+}
+.s3 {
+  width: 400px; height: 500px;
+  background: radial-gradient(ellipse, rgba(154,53,69,0.1) 0%, transparent 70%);
+  right: 5%; bottom: -15%;
+  animation-duration: 14s; animation-delay: 4s;
+}
+.s4 {
+  width: 600px; height: 500px;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.03) 0%, transparent 60%);
+  left: 50%; bottom: -5%;
+  animation-duration: 18s; animation-delay: 1s;
+}
+.s5 {
+  width: 350px; height: 400px;
+  background: radial-gradient(ellipse, rgba(154,53,69,0.12) 0%, transparent 70%);
+  left: -5%; bottom: -20%;
+  animation-duration: 20s; animation-delay: 6s;
+}
+
+@keyframes rise {
+  0%   { transform: translateY(0) scale(1) translateX(0); opacity: 0; }
+  20%  { opacity: 1; }
+  70%  { opacity: 0.6; }
+  100% { transform: translateY(-110vh) scale(1.4) translateX(8%); opacity: 0; }
+}
+
+/* CONTEÚDO HERO */
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 820px; padding: 0 5vw;
+}
+.hero-eyebrow {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--vinho);
+  margin-bottom: 28px;
+  opacity: 0; animation: fadein 0.8s 0.3s forwards;
+}
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(48px, 6.5vw, 88px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 28px;
+  opacity: 0; animation: fadein 0.8s 0.5s forwards;
+}
+h1 em { font-style: italic; color: var(--vinho); font-weight: 300; }
+.hero-sub {
+  font-size: 17px; font-weight: 300;
+  color: var(--text-muted); line-height: 1.75;
+  max-width: 580px; margin: 0 auto 44px;
+  opacity: 0; animation: fadein 0.8s 0.7s forwards;
+}
+.hero-actions {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: fadein 0.8s 0.9s forwards;
+}
+.btn-primary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  padding: 14px 36px;
+  background: var(--vinho);
+  color: #f0ede8;
+  border-radius: 99px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.02em;
+}
+.btn-primary:hover { background: #7d2b38; transform: translateY(-2px); }
+.btn-secondary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 400;
+  padding: 14px 36px;
+  border: 1px solid rgba(240,237,232,0.18);
+  border-radius: 99px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-secondary:hover { border-color: rgba(240,237,232,0.5); color: var(--text); }
+
+/* SCROLL HINT */
+.scroll-hint {
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: fadein 1s 1.4s forwards;
+}
+.scroll-hint span { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+.scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(240,237,232,0.4), transparent);
+  animation: scrolldown 1.6s ease-in-out infinite;
+}
+@keyframes scrolldown {
+  0%, 100% { transform: scaleY(1) translateY(0); opacity: 1; }
+  50% { transform: scaleY(0.5) translateY(12px); opacity: 0.3; }
+}
+
+/* PRÓXIMA SEÇÃO (espiada) */
+.next-peek {
+  position: relative; z-index: 1;
+  background: #111;
+  border-radius: 24px 24px 0 0;
+  margin-top: -60px;
+  padding: 80px 5vw 120px;
+  text-align: center;
+}
+.next-peek p {
+  font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@keyframes fadein {
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  h1 { font-size: clamp(38px, 9vw, 60px); }
+  .hero-sub { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Mari<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#">Serviços</a></li>
+    <li><a href="#">Como funciona</a></li>
+    <li><a href="#">Cases</a></li>
+    <li><a href="#">Sobre</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Marcar uma reunião</a>
+</nav>
+
+<section class="hero">
+  <div class="smoke">
+    <div class="smoke-blob s1"></div>
+    <div class="smoke-blob s2"></div>
+    <div class="smoke-blob s3"></div>
+    <div class="smoke-blob s4"></div>
+    <div class="smoke-blob s5"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Estrategista de Marketing Digital</div>
+    <h1>Mais leads qualificados,<br>mais vendas, mais <em>faturamento.</em></h1>
+    <p class="hero-sub">Conteúdo, tráfego pago, CRM e automação integrados numa estratégia única. Cada canal do seu digital com função definida dentro do seu processo comercial, do primeiro clique ao cliente fechado.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Marcar uma reunião →</a>
+      <a href="#" class="btn-secondary">Ver o que você recebe</a>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PRÓXIMA SEÇÃO (só para mostrar o efeito de sobreposição) -->
+<div class="next-peek">
+  <p>↓ próxima seção aqui</p>
+</div>
+
+</body>
+</html>
