@@ -190,25 +190,19 @@ nav {
   overflow: hidden;
 }
 
-.hero-img {
+.hero-bg-texture {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(168,137,90,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 20% 80%, rgba(168,137,90,0.05) 0%, transparent 60%);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(30,26,22,0.30) 0%,
-    rgba(30,26,22,0.55) 40%,
-    rgba(30,26,22,0.88) 80%,
-    rgba(30,26,22,1.00) 100%
-  );
+  background: var(--espresso);
+  opacity: 0;
 }
 
 .hero-content {
@@ -391,12 +385,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HERO -->
 <section class="hero" aria-label="Hero">
-  <img
-    src="DSC08741.JPG"
-    class="hero-img"
-    alt="Mari Manfredinny, Diretora de Marketing Fracionada"
-    fetchpriority="high"
-  >
+  <div class="hero-bg-texture"></div>
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
@@ -1001,6 +990,250 @@ function toggleSrv(header) {
 }
 @media (max-width: 540px) {
   .metodo-steps { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- FERRAMENTAS -->
+<section id="ferramentas" class="ferramentas">
+  <div class="section-inner">
+
+    <div class="dif-topo fade-up">
+      <span class="label-secao">Iscas digitais</span>
+      <div class="dif-linha"></div>
+    </div>
+
+    <div class="ferr-header fade-up">
+      <h2>Ferramentas gratuitas<br>para o seu <em>negócio.</em></h2>
+      <p>Calculadoras e simuladores criados para donos de negócio que querem tomar decisões com base em números reais antes de investir.</p>
+    </div>
+
+    <div class="ferr-grid">
+
+      <a href="https://calculadora.marimanfredinny.com/" target="_blank" rel="noopener" class="ferr-card fade-up">
+        <div class="ferr-card-label">Imobiliárias e corretores</div>
+        <h3>Calculadora de Investimento em Tráfego Pago</h3>
+        <p>Descubra quanto investir em anúncios para atingir sua meta de vendas. Simule cenários com base no seu ticket e taxa de conversão.</p>
+        <span class="ferr-cta">Acessar ferramenta →</span>
+      </a>
+
+      <a href="https://simulador.marimanfredinny.com/" target="_blank" rel="noopener" class="ferr-card fade-up" style="transition-delay:.1s">
+        <div class="ferr-card-label">Para qualquer negócio</div>
+        <h3>Simulador de Crescimento</h3>
+        <p>Simule o crescimento do seu faturamento com diferentes cenários de investimento em marketing digital e tráfego pago.</p>
+        <span class="ferr-cta">Acessar ferramenta →</span>
+      </a>
+
+      <a href="https://cac.marimanfredinny.com/" target="_blank" rel="noopener" class="ferr-card fade-up" style="transition-delay:.2s">
+        <div class="ferr-card-label">Para qualquer negócio</div>
+        <h3>Calculadora de CAC</h3>
+        <p>Calcule o seu Custo de Aquisição de Clientes e descubra se o seu investimento em marketing está gerando retorno real.</p>
+        <span class="ferr-cta">Acessar ferramenta →</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" class="sobre">
+  <div class="section-inner">
+
+    <div class="dif-topo fade-up">
+      <span class="label-secao">Quem está à frente</span>
+      <div class="dif-linha"></div>
+    </div>
+
+    <div class="sobre-grid">
+
+      <div class="sobre-foto fade-up">
+        <img src="DSC08592.JPG" alt="Mari Manfredinny, Diretora de Marketing Fracionada">
+      </div>
+
+      <div class="sobre-texto fade-up" style="transition-delay:.15s">
+        <h2>Mari<br><em>Manfredinny.</em></h2>
+        <span class="sobre-titulo">Diretora de Marketing Fracionada</span>
+        <p>Trabalho com donos de negócio que investem em marketing digital e não veem o retorno que esperavam. O problema quase sempre não está na execução: está na falta de uma cabeça estratégica conectando os canais.</p>
+        <p>Eu entro como a diretora de marketing da sua empresa, sem o custo de uma contratação CLT. Desenho a estratégia do zero, executo ou coordeno a equipe e garanto que tráfego pago, automação e conteúdo trabalhem para o mesmo resultado.</p>
+        <div class="sobre-nums">
+          <div class="sobre-num">
+            <span class="sobre-num-val">+80</span>
+            <span class="sobre-num-label">empresas atendidas</span>
+          </div>
+          <div class="sobre-num">
+            <span class="sobre-num-val">+5</span>
+            <span class="sobre-num-label">anos de mercado</span>
+          </div>
+          <div class="sobre-num">
+            <span class="sobre-num-val">BR</span>
+            <span class="sobre-num-label">atendimento nacional</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* FERRAMENTAS */
+.ferramentas {
+  padding: 120px 5vw;
+  background: var(--espresso-s);
+}
+.ferr-header {
+  max-width: 600px;
+  margin-bottom: 64px;
+}
+.ferr-header h2 {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 400;
+  color: var(--branco);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.ferr-header h2 em { color: var(--ouro-c); }
+.ferr-header p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1.8;
+}
+.ferr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.ferr-card {
+  padding: 36px 32px;
+  background: var(--vidro-claro-bg);
+  border: 1px solid var(--vidro-claro-borda);
+  border-radius: 2px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background 0.25s, border-color 0.25s;
+}
+.ferr-card:hover {
+  background: rgba(253,250,246,0.05);
+  border-color: rgba(168,137,90,0.35);
+}
+.ferr-card-label {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ouro);
+}
+.ferr-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--branco);
+  line-height: 1.3;
+}
+.ferr-card p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1.75;
+  flex: 1;
+}
+.ferr-cta {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--ouro-c);
+  margin-top: 8px;
+}
+
+/* SOBRE */
+.sobre {
+  padding: 120px 5vw;
+  background: var(--espresso);
+}
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.sobre-foto {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+}
+.sobre-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.sobre-texto h2 {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 400;
+  color: var(--branco);
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+.sobre-texto h2 em { color: var(--ouro-c); }
+.sobre-titulo {
+  display: block;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ouro);
+  margin-bottom: 28px;
+}
+.sobre-texto p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+.sobre-nums {
+  display: flex;
+  gap: 32px;
+  margin-top: 36px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(168,137,90,0.2);
+}
+.sobre-num {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sobre-num-val {
+  font-family: 'Lora', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--ouro-c);
+  line-height: 1;
+}
+.sobre-num-label {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+@media (max-width: 900px) {
+  .ferr-grid { grid-template-columns: 1fr; }
+  .ferramentas { padding: 80px 5vw; }
+  .sobre-grid { grid-template-columns: 1fr; gap: 40px; }
+  .sobre { padding: 80px 5vw; }
+  .sobre-foto { aspect-ratio: 4/3; }
 }
 </style>
 
