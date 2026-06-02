@@ -407,8 +407,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       trabalha para o mesmo <em>resultado.</em>
     </h1>
     <p class="hero-sub fade-up" style="transition-delay:.2s">
-      Tráfego pago, automação e conteúdo desenhados do zero para o seu processo comercial.
-      Sem pontas soltas. Sem canais trabalhando sozinhos.
+      Tráfego pago, automação, sites e estratégias desenhadas do zero para gerar demanda e faturamento para a sua empresa. Marketing digital lado a lado com o comercial.
     </p>
     <div class="hero-actions fade-up" style="transition-delay:.3s">
       <a href="#contato" class="btn-primary">Quero uma estratégia integrada</a>
@@ -422,11 +421,215 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span class="strip-item">Tráfego Pago</span>
+    <span class="strip-item">Google Ads</span>
+    <span class="strip-item">Meta Ads</span>
+    <span class="strip-item">Automação de Marketing</span>
+    <span class="strip-item">CRM</span>
+    <span class="strip-item">Estratégia Digital</span>
+    <span class="strip-item">Gestão de Leads</span>
+    <span class="strip-item">Social Media</span>
+    <span class="strip-item">Landing Pages</span>
+    <span class="strip-item">E-mail Marketing</span>
+    <span class="strip-item">Tráfego Pago</span>
+    <span class="strip-item">Google Ads</span>
+    <span class="strip-item">Meta Ads</span>
+    <span class="strip-item">Automação de Marketing</span>
+    <span class="strip-item">CRM</span>
+    <span class="strip-item">Estratégia Digital</span>
+    <span class="strip-item">Gestão de Leads</span>
+    <span class="strip-item">Social Media</span>
+    <span class="strip-item">Landing Pages</span>
+    <span class="strip-item">E-mail Marketing</span>
+  </div>
+</div>
+
+<!-- DIFERENCIAL -->
+<section id="diferencial" class="diferencial">
+  <div class="section-inner">
+
+    <div class="dif-topo fade-up">
+      <span class="label-secao">O diferencial</span>
+      <div class="dif-linha"></div>
+    </div>
+
+    <div class="dif-grid">
+      <div class="dif-esquerda fade-up">
+        <h2>
+          Você tem gestor de tráfego.<br>
+          Mas quem está gerindo<br>
+          o seu <em>marketing?</em>
+        </h2>
+        <p>
+          Agência executa. Head de marketing pensa, desenha e garante que tudo converge para o mesmo resultado. Eu atuo como a cabeça estratégica do seu digital, de ponta a ponta: do primeiro clique ao lead qualificado no comercial.
+        </p>
+        <a href="#contato" class="btn-primary" style="margin-top:32px;display:inline-block">
+          Quero uma estratégia integrada
+        </a>
+      </div>
+
+      <div class="dif-cards fade-up" style="transition-delay:.15s">
+        <div class="dif-card">
+          <span class="dif-card-num">01</span>
+          <h3>Sem pontas soltas</h3>
+          <p>Cada canal tem uma função definida dentro do seu processo de vendas. Tráfego, conteúdo, CRM e automação conectados numa única estratégia.</p>
+        </div>
+        <div class="dif-card">
+          <span class="dif-card-num">02</span>
+          <h3>Marketing lado a lado com o comercial</h3>
+          <p>A estratégia é desenhada a partir do seu processo comercial. O lead que chega já qualificado, com histórico e pronto para fechar.</p>
+        </div>
+        <div class="dif-card">
+          <span class="dif-card-num">03</span>
+          <h3>Uma cabeça, não uma agência</h3>
+          <p>Trabalho com donos de negócio que querem resultado, não relatório. Responsabilidade estratégica do início ao fim, sem repassar para um time júnior.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CSS STRIP + DIFERENCIAL inline -->
+<style>
+/* STRIP */
+.strip {
+  background: var(--espresso-s);
+  border-top: 1px solid rgba(168,137,90,0.15);
+  border-bottom: 1px solid rgba(168,137,90,0.15);
+  padding: 14px 0;
+  overflow: hidden;
+}
+.strip-track {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+.strip-item {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--taupe);
+  padding: 0 28px;
+  flex-shrink: 0;
+}
+.strip-item::after {
+  content: '·';
+  color: var(--ouro);
+  margin-left: 28px;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* DIFERENCIAL */
+.diferencial {
+  padding: 120px 5vw;
+  background: var(--espresso);
+}
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.dif-topo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 72px;
+}
+.label-secao {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ouro);
+  white-space: nowrap;
+}
+.dif-linha {
+  flex: 1;
+  height: 1px;
+  background: rgba(168,137,90,0.25);
+}
+.dif-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.dif-esquerda h2 {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--branco);
+  margin-bottom: 24px;
+}
+.dif-esquerda h2 em {
+  color: var(--ouro-c);
+}
+.dif-esquerda p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1.85;
+  max-width: 440px;
+}
+.dif-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dif-card {
+  padding: 28px 32px;
+  background: var(--vidro-claro-bg);
+  border: 1px solid var(--vidro-claro-borda);
+  border-radius: 2px;
+  transition: background 0.25s, border-color 0.25s;
+}
+.dif-card:hover {
+  background: rgba(253,250,246,0.05);
+  border-color: rgba(168,137,90,0.3);
+}
+.dif-card-num {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--ouro);
+  display: block;
+  margin-bottom: 10px;
+}
+.dif-card h3 {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--creme);
+  margin-bottom: 8px;
+}
+.dif-card p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1.75;
+}
+
+@media (max-width: 900px) {
+  .dif-grid { grid-template-columns: 1fr; gap: 48px; }
+  .diferencial { padding: 80px 5vw; }
+}
+</style>
+
 <!-- JS: fade on scroll -->
 <script>
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.15 });
+}, { threshold: 0.12 });
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 
