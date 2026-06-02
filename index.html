@@ -875,5 +875,134 @@ function toggleSrv(header) {
 }
 </script>
 
+<!-- MÉTODO -->
+<section id="metodo" class="metodo">
+  <div class="section-inner">
+
+    <div class="dif-topo fade-up">
+      <span class="label-secao">Como funciona</span>
+      <div class="dif-linha"></div>
+    </div>
+
+    <div class="metodo-header fade-up">
+      <h2>Estratégia desenhada<br>para o seu <em>negócio.</em></h2>
+      <p>Antes de qualquer campanha ou publicação, eu entendo o negócio, o mercado e o cliente. A estratégia vem do diagnóstico, e o resultado vem da estratégia.</p>
+    </div>
+
+    <div class="metodo-steps">
+
+      <div class="metodo-step fade-up">
+        <div class="metodo-step-num">01</div>
+        <div class="metodo-step-linha"></div>
+        <h3>Diagnóstico</h3>
+        <p>Análise completa do negócio, dos concorrentes, do público e das oportunidades reais de crescimento no digital. Sem atalho.</p>
+      </div>
+
+      <div class="metodo-step fade-up" style="transition-delay:.1s">
+        <div class="metodo-step-num">02</div>
+        <div class="metodo-step-linha"></div>
+        <h3>Estratégia</h3>
+        <p>Desenho do ecossistema ideal: canais, formatos, jornada do lead e metas de resultado, tudo alinhado ao seu processo comercial.</p>
+      </div>
+
+      <div class="metodo-step fade-up" style="transition-delay:.2s">
+        <div class="metodo-step-num">03</div>
+        <div class="metodo-step-linha"></div>
+        <h3>Execução</h3>
+        <p>Implementação com acompanhamento próximo: tráfego, CRM e automação operando de forma integrada desde o primeiro dia.</p>
+      </div>
+
+      <div class="metodo-step fade-up" style="transition-delay:.3s">
+        <div class="metodo-step-num">04</div>
+        <div class="metodo-step-linha"></div>
+        <h3>Análise e escala</h3>
+        <p>Relatório mensal com métricas reais, decisões baseadas em dados e ajustes contínuos para escalar o que está trazendo resultado.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+.metodo {
+  padding: 120px 5vw;
+  background: var(--espresso);
+}
+.metodo-header {
+  max-width: 640px;
+  margin-bottom: 72px;
+}
+.metodo-header h2 {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 400;
+  color: var(--branco);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.metodo-header h2 em { color: var(--ouro-c); }
+.metodo-header p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1.8;
+}
+.metodo-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+.metodo-step {
+  padding: 36px 28px;
+  background: var(--vidro-claro-bg);
+  border: 1px solid var(--vidro-claro-borda);
+  border-radius: 2px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.metodo-step:hover {
+  background: rgba(253,250,246,0.05);
+  border-color: rgba(168,137,90,0.3);
+}
+.metodo-step-num {
+  font-family: 'Lora', serif;
+  font-size: 52px;
+  font-weight: 400;
+  color: rgba(168,137,90,0.2);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.metodo-step-linha {
+  width: 40px;
+  height: 1px;
+  background: rgba(168,137,90,0.4);
+  margin-bottom: 20px;
+  transition: width 0.3s;
+}
+.metodo-step:hover .metodo-step-linha { width: 60px; }
+.metodo-step h3 {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--creme);
+  margin-bottom: 12px;
+}
+.metodo-step p {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .metodo-steps { grid-template-columns: 1fr 1fr; }
+  .metodo { padding: 80px 5vw; }
+}
+@media (max-width: 540px) {
+  .metodo-steps { grid-template-columns: 1fr; }
+}
+</style>
+
 </body>
 </html>
