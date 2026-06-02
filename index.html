@@ -633,5 +633,247 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 </script>
 
+<!-- SERVIÇOS -->
+<section id="servicos" class="servicos">
+  <div class="section-inner">
+
+    <div class="dif-topo fade-up">
+      <span class="label-secao">O que você contrata</span>
+      <div class="dif-linha"></div>
+    </div>
+
+    <div class="srv-header fade-up">
+      <h2>Estratégia integrada,<br>canal por <em>canal.</em></h2>
+      <p>Cada serviço tem uma função dentro do seu processo de aquisição. Todos conectados porque resultado vem de sistema, e sistema precisa de uma cabeça estratégica à frente.</p>
+    </div>
+
+    <div class="srv-lista">
+
+      <article class="srv-item fade-up" itemscope itemtype="https://schema.org/Service">
+        <div class="srv-item-header" onclick="toggleSrv(this)">
+          <div class="srv-item-esq">
+            <span class="srv-num">(001)</span>
+            <h3 itemprop="name">Tráfego Pago para Empresas</h3>
+          </div>
+          <span class="srv-toggle">+</span>
+        </div>
+        <div class="srv-item-body">
+          <div class="srv-item-content">
+            <p itemprop="description">Criação e gestão de campanhas no Google Ads e Meta Ads com base no comportamento e perfil do seu cliente ideal. Seu negócio aparece para quem está buscando o que você oferece, no momento certo para decidir. Tráfego pago com foco em resultado, não em clique.</p>
+            <div class="srv-tags">
+              <span class="srv-tag">Google Ads</span>
+              <span class="srv-tag">Meta Ads</span>
+              <span class="srv-tag">Otimização contínua</span>
+              <span class="srv-tag">Relatório de performance</span>
+            </div>
+            <a href="/servicos/trafego-pago/" class="srv-link">Ver detalhes →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="srv-item fade-up" itemscope itemtype="https://schema.org/Service">
+        <div class="srv-item-header" onclick="toggleSrv(this)">
+          <div class="srv-item-esq">
+            <span class="srv-num">(002)</span>
+            <h3 itemprop="name">Automação de Marketing e CRM</h3>
+          </div>
+          <span class="srv-toggle">+</span>
+        </div>
+        <div class="srv-item-body">
+          <div class="srv-item-content">
+            <p itemprop="description">Implementação de CRM com fluxos automáticos de nutrição, follow-up e qualificação integrados ao WhatsApp e e-mail. Do primeiro contato ao pós-venda, cada etapa da jornada mapeada e automatizada para que o lead chegue ao comercial pronto para fechar.</p>
+            <div class="srv-tags">
+              <span class="srv-tag">CRM</span>
+              <span class="srv-tag">E-mail marketing</span>
+              <span class="srv-tag">WhatsApp automação</span>
+              <span class="srv-tag">Gestão de leads</span>
+            </div>
+            <a href="/servicos/automacao/" class="srv-link">Ver detalhes →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="srv-item fade-up" itemscope itemtype="https://schema.org/Service">
+        <div class="srv-item-header" onclick="toggleSrv(this)">
+          <div class="srv-item-esq">
+            <span class="srv-num">(003)</span>
+            <h3 itemprop="name">Estratégia de Marketing Digital</h3>
+          </div>
+          <span class="srv-toggle">+</span>
+        </div>
+        <div class="srv-item-body">
+          <div class="srv-item-content">
+            <p itemprop="description">Diagnóstico completo do seu digital, desenho do ecossistema ideal e execução integrada. Tráfego, conteúdo, CRM e automação operando como um sistema único com uma diretora de marketing fracionada responsável por cada peça.</p>
+            <div class="srv-tags">
+              <span class="srv-tag">Diagnóstico digital</span>
+              <span class="srv-tag">Planejamento estratégico</span>
+              <span class="srv-tag">Conteúdo</span>
+              <span class="srv-tag">Social media</span>
+            </div>
+            <a href="/servicos/estrategia-digital/" class="srv-link">Ver detalhes →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="srv-item fade-up" itemscope itemtype="https://schema.org/Service">
+        <div class="srv-item-header" onclick="toggleSrv(this)">
+          <div class="srv-item-esq">
+            <span class="srv-num">(004)</span>
+            <h3 itemprop="name">Sites e Landing Pages</h3>
+          </div>
+          <span class="srv-toggle">+</span>
+        </div>
+        <div class="srv-item-body">
+          <div class="srv-item-content">
+            <p itemprop="description">Sites e landing pages otimizados para ranquear no Google e converter quem chega. Estrutura de SEO, velocidade, copy e chamadas para ação alinhadas à sua oferta. O cliente que está procurando o que você vende encontra você primeiro.</p>
+            <div class="srv-tags">
+              <span class="srv-tag">SEO</span>
+              <span class="srv-tag">Landing pages</span>
+              <span class="srv-tag">Copywriting</span>
+              <span class="srv-tag">Conversão</span>
+            </div>
+            <a href="/servicos/sites-landing-pages/" class="srv-link">Ver detalhes →</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.servicos {
+  padding: 120px 5vw;
+  background: var(--espresso-s);
+}
+.srv-header {
+  max-width: 640px;
+  margin-bottom: 64px;
+}
+.srv-header h2 {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 400;
+  color: var(--branco);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.srv-header h2 em { color: var(--ouro-c); }
+.srv-header p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1.8;
+}
+.srv-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.srv-item {
+  border: 1px solid var(--vidro-claro-borda);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color 0.25s;
+}
+.srv-item:hover { border-color: rgba(168,137,90,0.35); }
+.srv-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 32px;
+  cursor: pointer;
+  user-select: none;
+}
+.srv-item-esq {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.srv-num {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--ouro);
+  min-width: 48px;
+}
+.srv-item-header h3 {
+  font-family: 'Lora', serif;
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 400;
+  color: var(--branco);
+  transition: color 0.2s;
+}
+.srv-item:hover .srv-item-header h3 { color: var(--ouro-c); }
+.srv-toggle {
+  font-size: 22px;
+  font-weight: 300;
+  color: var(--ouro);
+  transition: transform 0.3s;
+  line-height: 1;
+}
+.srv-item.open .srv-toggle { transform: rotate(45deg); }
+.srv-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.srv-item.open .srv-item-body { max-height: 400px; }
+.srv-item-content {
+  padding: 0 32px 32px 104px;
+  border-top: 1px solid var(--vidro-claro-borda);
+}
+.srv-item-content p {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--taupe);
+  line-height: 1.85;
+  margin: 20px 0 20px;
+  max-width: 640px;
+}
+.srv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.srv-tag {
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border: 1px solid var(--vidro-ouro-borda);
+  border-radius: 40px;
+  color: var(--ouro);
+}
+.srv-link {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--ouro-c);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.srv-link:hover { color: var(--branco); }
+
+@media (max-width: 768px) {
+  .srv-item-content { padding: 0 20px 28px 20px; }
+  .srv-item-header { padding: 22px 20px; }
+  .srv-item-esq { gap: 14px; }
+  .servicos { padding: 80px 5vw; }
+}
+</style>
+
+<script>
+function toggleSrv(header) {
+  const item = header.closest('.srv-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.srv-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
 </body>
 </html>
