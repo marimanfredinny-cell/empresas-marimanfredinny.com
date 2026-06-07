@@ -1,243 +1,162 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Blog de Marketing Digital para Empresas | Mari Manfredinny</title>
-<meta name="description" content="Blog sobre marketing digital, tráfego pago, automação e estratégia para empresas. Conteúdo prático para donos de negócio que querem crescer com marketing integrado.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://empresa.marimanfredinny.com/blog/">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog de Marketing Digital para Empresas | Mari Manfredinny">
-<meta property="og:description" content="Conteúdo prático sobre tráfego pago, automação e estratégia de marketing para empresas que querem crescer.">
-<meta property="og:url" content="https://empresa.marimanfredinny.com/blog/">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Blog Mari Manfredinny — Marketing Digital para Empresas",
-  "url": "https://empresa.marimanfredinny.com/blog/",
-  "description": "Conteúdo sobre tráfego pago, automação de marketing e estratégia digital para empresas.",
-  "author": {
-    "@type": "Person",
-    "name": "Mari Manfredinny",
-    "jobTitle": "Diretora de Marketing Fracionada",
-    "url": "https://empresa.marimanfredinny.com"
-  }
-}
-</script>
-
-<!-- GTM -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PZVMNHXM');</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-:root {
-  --espresso:    #1E1A16;
-  --espresso-s:  #2C2620;
-  --branco:      #FDFAF6;
-  --creme:       #F5F0E8;
-  --taupe:       #C4B49A;
-  --ouro:        #A8895A;
-  --ouro-c:      #C4A46E;
-  --vidro-claro-bg:    rgba(253,250,246,0.08);
-  --vidro-claro-borda: rgba(253,250,246,0.18);
-  --vidro-ouro-bg:     rgba(168,137,90,0.08);
-  --vidro-ouro-borda:  rgba(168,137,90,0.25);
-}
-body { font-family: 'Poppins', sans-serif; font-weight: 300; background: var(--espresso); color: var(--branco); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 5vw; height: 68px; background: rgba(30,26,22,0.92); border-bottom: 1px solid rgba(253,250,246,0.06); backdrop-filter: blur(16px); }
-.nav-logo { font-family: 'Lora', serif; font-style: italic; font-size: 20px; color: var(--ouro-c); text-decoration: none; }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-size: 11px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe); text-decoration: none; transition: color 0.2s; }
-.nav-links a:hover { color: var(--branco); }
-.nav-links a.ativo { color: var(--ouro-c); }
-.nav-cta { font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 24px; border: 1px solid var(--vidro-ouro-borda); background: var(--vidro-ouro-bg); color: var(--ouro-c); text-decoration: none; border-radius: 40px; transition: background 0.2s; }
-.nav-cta:hover { background: rgba(168,137,90,0.16); }
-@media (max-width: 768px) { .nav-links { display: none; } }
-
-/* BLOG HEADER */
-.blog-header {
-  padding: 120px 5vw 80px;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-bottom: 1px solid rgba(168,137,90,0.12);
-}
-.label-secao { font-size: 10px; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); }
-.linha-ouro { width: 40px; height: 1px; background: rgba(168,137,90,0.4); margin: 16px 0 24px; }
-.blog-header h1 { font-family: 'Lora', serif; font-style: italic; font-size: clamp(32px, 4vw, 56px); font-weight: 400; line-height: 1.15; color: var(--branco); margin-bottom: 16px; }
-.blog-header h1 em { color: var(--ouro-c); }
-.blog-header p { font-size: 15px; font-weight: 300; color: var(--taupe); max-width: 560px; line-height: 1.8; }
-
-/* FILTROS */
-.blog-filtros {
-  padding: 40px 5vw 0;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.filtro-tag {
-  font-size: 10px; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 8px 20px; border: 1px solid var(--vidro-claro-borda);
-  color: var(--taupe); background: transparent; cursor: pointer;
-  border-radius: 40px; transition: all 0.2s; text-decoration: none;
-}
-.filtro-tag:hover, .filtro-tag.ativo { border-color: var(--ouro); color: var(--ouro-c); }
-
-/* GRID POSTS */
-.blog-grid {
-  padding: 48px 5vw 100px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-.post-card {
-  padding: 32px 28px;
-  background: var(--vidro-claro-bg);
-  border: 1px solid var(--vidro-claro-borda);
-  border-radius: 2px;
-  text-decoration: none;
-  transition: border-color 0.25s;
-  display: flex;
-  flex-direction: column;
-}
-.post-card:hover { border-color: rgba(168,137,90,0.35); }
-.post-tag { font-size: 9px; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ouro); margin-bottom: 16px; display: block; }
-.post-card h2 { font-family: 'Lora', serif; font-size: 18px; font-weight: 400; color: var(--creme); line-height: 1.4; margin-bottom: 12px; flex-grow: 1; }
-.post-card p { font-size: 13px; font-weight: 300; color: var(--taupe); line-height: 1.75; margin-bottom: 24px; }
-.post-meta { font-size: 10px; font-weight: 300; color: var(--taupe); opacity: 0.5; letter-spacing: 0.06em; }
-.post-leia { font-size: 10px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ouro-c); margin-top: 16px; display: inline-flex; align-items: center; gap: 6px; }
-.post-leia::after { content: '→'; }
-
-/* VAZIO */
-.blog-em-breve {
-  padding: 80px 5vw 120px;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-.blog-em-breve p { font-size: 15px; font-weight: 300; color: var(--taupe); max-width: 480px; margin: 0 auto; line-height: 1.8; }
-
-/* FOOTER */
-.footer-mini { padding: 32px 5vw; background: var(--espresso); border-top: 1px solid rgba(168,137,90,0.12); display: flex; justify-content: space-between; align-items: center; }
-.footer-mini a { font-family: 'Lora', serif; font-style: italic; font-size: 18px; color: var(--ouro-c); text-decoration: none; }
-.footer-mini span { font-size: 11px; font-weight: 300; color: var(--taupe); opacity: 0.5; }
-.wpp-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 52px; height: 52px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.35); transition: transform 0.2s; text-decoration: none; }
-.wpp-float:hover { transform: translateY(-3px) scale(1.05); }
-
-@media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr; } }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Mari Manfredinny</title>
+  <meta name="description" content="Artigos sobre tráfego pago para empresas, automação de marketing, estratégia digital e marketing fracionado.">
+  <link rel="canonical" href="https://empresa.marimanfredinny.com/blog/">
+  <meta property="og:title" content="Blog | Mari Manfredinny">
+  <meta property="og:description" content="Artigos sobre tráfego pago para empresas, automação de marketing, estratégia digital e marketing fracionado.">
+  <meta property="og:url" content="https://empresa.marimanfredinny.com/blog/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- GTM -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PZVMNHXM');</script>
+  <!-- Meta Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1348713502744731');fbq('track','PageView');</script>
+  <!-- Clarity -->
+  <script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","w24hoyt1fi");</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    a{text-decoration:none;color:inherit}
+    :root{--an:#1E3540;--aa:#4A6670;--ac:#6B8590;--nv:#B8C8CC}
+    body{font-family:'Inter',-apple-system,sans-serif;font-weight:300;background:var(--an);color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(30,53,64,0.65);backdrop-filter:blur(40px) saturate(200%);-webkit-backdrop-filter:blur(40px) saturate(200%);border-bottom:0.5px solid rgba(255,255,255,0.12)}
+    .nav-logo{font-size:14px;font-weight:600;color:#fff;letter-spacing:-0.1px}
+    .nav-lks{display:flex;gap:24px;list-style:none}
+    .nav-lks a{font-size:13px;font-weight:400;color:rgba(255,255,255,0.6);transition:color .2s;letter-spacing:-0.1px}
+    .nav-lks a:hover{color:#fff}
+    .nav-cta{font-size:12px;font-weight:500;padding:7px 18px;background:rgba(255,255,255,0.12);border:0.5px solid rgba(255,255,255,0.25);box-shadow:inset 0 1px 0 rgba(255,255,255,0.3);color:#fff;border-radius:8px;transition:background .2s;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .nav-cta:hover{background:rgba(255,255,255,0.18)}
+    @media(max-width:768px){.nav-lks,.nav-cta{display:none}}
+    footer{padding:40px 5vw;border-top:0.5px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;background:#1E3540}
+    .ft-brand{font-size:16px;font-weight:500;color:#fff;letter-spacing:-0.1px}
+    .ft-lks{display:flex;gap:20px;list-style:none;flex-wrap:wrap}
+    .ft-lks a{font-size:12px;color:rgba(184,200,204,0.45);transition:color .2s}
+    .ft-lks a:hover{color:#B8C8CC}
+    .ft-copy{width:100%;font-size:11px;color:rgba(184,200,204,0.28);letter-spacing:0.02em}
+    .wpp{position:fixed;bottom:28px;right:28px;z-index:999;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:transform .2s}
+    .wpp:hover{transform:translateY(-3px) scale(1.05)}
+    .blog-header{padding:100px 5vw 60px;background:#1E3540;text-align:center}
+    .blog-header h1{font-size:clamp(48px,7vw,88px);font-weight:200;letter-spacing:-0.04em;color:#fff;line-height:1.0;margin-bottom:16px}
+    .blog-header .subtitle{font-size:clamp(18px,2.5vw,28px);font-weight:300;color:rgba(184,200,204,0.7);letter-spacing:-0.02em;margin-bottom:8px}
+    .blog-header .tagline{font-size:13px;font-weight:400;color:rgba(184,200,204,0.4);letter-spacing:0.06em;text-transform:uppercase}
+    .blog-grid-section{background:linear-gradient(135deg,#E8EEF0,#F2F2F7,#E4ECF0);padding:60px 5vw}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;max-width:1100px;margin:0 auto}
+    .card-lgt{background:rgba(255,255,255,0.55);backdrop-filter:blur(28px) saturate(200%);-webkit-backdrop-filter:blur(28px) saturate(200%);border-radius:14px;border:0.5px solid rgba(255,255,255,0.7);box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.92),0 8px 32px rgba(74,102,112,0.08);overflow:hidden;padding:28px;transition:transform .2s,box-shadow .2s;display:block}
+    .card-lgt:hover{transform:translateY(-2px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.95),0 16px 48px rgba(74,102,112,0.12)}
+    .card-tag{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#4A6670;margin-bottom:12px}
+    .card-h2{font-size:clamp(17px,2vw,21px);font-weight:300;letter-spacing:-0.02em;color:#1E3540;line-height:1.3;margin-bottom:12px}
+    .card-meta{font-size:11px;color:rgba(30,53,64,0.4);margin-bottom:10px}
+    .card-p{font-size:14px;color:rgba(30,53,64,0.6);line-height:1.55;margin-bottom:20px}
+    .card-link{font-size:11px;font-weight:600;color:#4A6670;text-transform:uppercase;letter-spacing:.06em}
+    .cta-section{background:#1E3540;padding:80px 5vw;text-align:center}
+    .cta-section h2{font-size:clamp(24px,3.5vw,40px);font-weight:300;letter-spacing:-0.02em;color:#fff;margin-bottom:12px}
+    .cta-section p{font-size:15px;color:rgba(184,200,204,0.6);margin-bottom:32px}
+    .btn-wpp{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.04em;padding:14px 32px;background:#25D366;border-radius:40px;color:#fff;transition:background .2s,transform .2s;box-shadow:0 4px 20px rgba(37,211,102,0.3)}
+    .btn-wpp:hover{background:#1fba58;transform:translateY(-2px)}
+  </style>
 </head>
 <body>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZVMNHXM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZVMNHXM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<nav>
-  <a href="/" class="nav-logo">Mari Manfredinny</a>
-  <ul class="nav-links">
-    <li><a href="/#servicos">Serviços</a></li>
-    <li><a href="/#metodo">Método</a></li>
-    <li><a href="/#ferramentas">Ferramentas</a></li>
-    <li><a href="/#sobre">Sobre</a></li>
-    <li><a href="/blog/" class="ativo">Blog</a></li>
-  </ul>
-  <a href="/#contato" class="nav-cta">Falar com a Mari</a>
-</nav>
+  <nav>
+    <a href="/" class="nav-logo">Mari Manfredinny</a>
+    <ul class="nav-lks">
+      <li><a href="/#servicos">Serviços</a></li>
+      <li><a href="/#case">Cases</a></li>
+      <li><a href="/#contato">Contato</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <a href="/#contato" class="nav-cta">Agendar diagnóstico</a>
+  </nav>
 
-<main>
+  <header class="blog-header">
+    <h1>Blog.</h1>
+    <p class="subtitle">Marketing que fecha negócio.</p>
+    <p class="tagline">Tráfego, automação e estratégia.</p>
+  </header>
 
-  <div class="blog-header">
-    <span class="label-secao">Blog</span>
-    <div class="linha-ouro"></div>
-    <h1>Marketing digital que<br>gera <em>resultado real.</em></h1>
-    <p>Conteúdo prático sobre tráfego pago, automação e estratégia para donos de empresa que querem crescer com marketing integrado.</p>
-  </div>
+  <section class="blog-grid-section">
+    <div class="blog-grid">
 
-  <div class="blog-filtros">
-    <a href="/blog/" class="filtro-tag ativo">Todos</a>
-    <a href="/blog/" class="filtro-tag">Tráfego Pago</a>
-    <a href="/blog/" class="filtro-tag">Automação</a>
-    <a href="/blog/" class="filtro-tag">Estratégia</a>
-    <a href="/blog/" class="filtro-tag">CRM</a>
-  </div>
+      <a href="/blog/quanto-investir-em-trafego-pago/" class="card-lgt">
+        <p class="card-tag">Tráfego Pago</p>
+        <h2 class="card-h2">Quanto investir em tráfego pago? A fórmula por trás do número.</h2>
+        <p class="card-meta">Jun 2026 · 5 min</p>
+        <p class="card-p">O orçamento certo não existe sem a meta certa. Entenda como calcular.</p>
+        <span class="card-link">Ler artigo →</span>
+      </a>
 
-  <div class="blog-grid">
+      <a href="/blog/o-que-e-diretora-de-marketing-fracionada/" class="card-lgt">
+        <p class="card-tag">Marketing Fracionado</p>
+        <h2 class="card-h2">O que é uma diretora de marketing fracionada?</h2>
+        <p class="card-meta">Mai 2026 · 4 min</p>
+        <p class="card-p">CMO sem vínculo CLT: como funciona e para quem faz sentido.</p>
+        <span class="card-link">Ler artigo →</span>
+      </a>
 
-    <a href="/blog/quanto-investir-em-trafego-pago/" class="post-card">
-      <span class="post-tag">Tráfego Pago</span>
-      <h2>Quanto investir em tráfego pago? O guia para empresas em 2026</h2>
-      <p>Descubra como calcular o orçamento ideal para anúncios com base no seu ticket médio, taxa de conversão e meta de leads.</p>
-      <span class="post-meta">Jun 2026</span>
-      <span class="post-leia">Ler artigo</span>
+      <a href="/blog/automacao-de-marketing-para-pequenas-empresas/" class="card-lgt">
+        <p class="card-tag">Automação</p>
+        <h2 class="card-h2">Automação de marketing para pequenas empresas: por onde começar.</h2>
+        <p class="card-meta">Mai 2026 · 6 min</p>
+        <p class="card-p">Da escolha do CRM ao primeiro fluxo de nutrição ativo.</p>
+        <span class="card-link">Ler artigo →</span>
+      </a>
+
+      <a href="/blog/trafego-pago-vs-seo/" class="card-lgt">
+        <p class="card-tag">Estratégia</p>
+        <h2 class="card-h2">Tráfego pago vs. SEO: quando usar cada um (ou os dois).</h2>
+        <p class="card-meta">Abr 2026 · 5 min</p>
+        <p class="card-p">A resposta depende do seu momento de negócio. Entenda a lógica.</p>
+        <span class="card-link">Ler artigo →</span>
+      </a>
+
+      <a href="/blog/como-calcular-cac/" class="card-lgt">
+        <p class="card-tag">Métricas</p>
+        <h2 class="card-h2">Como calcular o CAC e usar esse número para decidir onde investir.</h2>
+        <p class="card-meta">Abr 2026 · 4 min</p>
+        <p class="card-p">CAC alto não é necessariamente problema. Depende do LTV.</p>
+        <span class="card-link">Ler artigo →</span>
+      </a>
+
+      <a href="/blog/crm-para-empresas/" class="card-lgt">
+        <p class="card-tag">Automação</p>
+        <h2 class="card-h2">CRM para empresas: qual escolher e como não desperdiçar a ferramenta.</h2>
+        <p class="card-meta">Mar 2026 · 5 min</p>
+        <p class="card-p">A maioria das empresas compra CRM e não usa. Veja como evitar isso.</p>
+        <span class="card-link">Ler artigo →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Quer receber conteúdo direto ao ponto?</h2>
+    <p>Estratégia, tráfego e automação — sem enrolação.</p>
+    <a href="https://wa.me/5532999644209?text=Olá%20Mari!" class="btn-wpp" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Falar pelo WhatsApp
     </a>
+  </section>
 
-    <a href="/blog/o-que-e-diretora-de-marketing-fracionada/" class="post-card">
-      <span class="post-tag">Estratégia</span>
-      <h2>O que é uma diretora de marketing fracionada e quando contratar</h2>
-      <p>Entenda a diferença entre agência, freelancer e uma head de marketing fracionada — e qual faz sentido para o momento do seu negócio.</p>
-      <span class="post-meta">Mai 2026</span>
-      <span class="post-leia">Ler artigo</span>
-    </a>
+  <footer>
+    <span class="ft-brand">Mari Manfredinny</span>
+    <ul class="ft-lks">
+      <li><a href="/servicos/trafego-pago/">Tráfego Pago</a></li>
+      <li><a href="/servicos/automacao/">Automação</a></li>
+      <li><a href="/servicos/estrategia-digital/">Estratégia</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <p class="ft-copy">© 2026 · empresa.marimanfredinny.com · Todos os direitos reservados</p>
+  </footer>
 
-    <a href="/blog/automacao-de-marketing-para-pequenas-empresas/" class="post-card">
-      <span class="post-tag">Automação</span>
-      <h2>Automação de marketing para pequenas empresas: por onde começar</h2>
-      <p>Um roteiro prático para implementar CRM e fluxos de nutrição mesmo com equipe reduzida e orçamento enxuto.</p>
-      <span class="post-meta">Mai 2026</span>
-      <span class="post-leia">Ler artigo</span>
-    </a>
-
-    <a href="/blog/trafego-pago-vs-seo/" class="post-card">
-      <span class="post-tag">Tráfego Pago</span>
-      <h2>Tráfego pago vs SEO: o que usar agora e o que construir para o futuro</h2>
-      <p>Como decidir onde alocar seu orçamento de marketing conforme o estágio da empresa e os objetivos de curto e longo prazo.</p>
-      <span class="post-meta">Abr 2026</span>
-      <span class="post-leia">Ler artigo</span>
-    </a>
-
-    <a href="/blog/como-calcular-cac/" class="post-card">
-      <span class="post-tag">Estratégia</span>
-      <h2>Como calcular o CAC da sua empresa e usá-lo para tomar decisões</h2>
-      <p>Custo de Aquisição de Clientes na prática: o que incluir no cálculo, como interpretar e quando o número é um problema.</p>
-      <span class="post-meta">Abr 2026</span>
-      <span class="post-leia">Ler artigo</span>
-    </a>
-
-    <a href="/blog/crm-para-empresas/" class="post-card">
-      <span class="post-tag">CRM</span>
-      <h2>CRM para empresas: qual escolher e como não desperdiçar a ferramenta</h2>
-      <p>Os erros mais comuns na implantação de CRM e como configurar corretamente para que o time comercial realmente use.</p>
-      <span class="post-meta">Mar 2026</span>
-      <span class="post-leia">Ler artigo</span>
-    </a>
-
-  </div>
-
-</main>
-
-<footer class="footer-mini">
-  <a href="/">Mari Manfredinny</a>
-  <span>© 2026 · Todos os direitos reservados</span>
-</footer>
-
-<a href="https://wa.me/5532999644209?text=Olá%20Mari!%20Vi%20o%20blog%20e%20quero%20conversar." class="wpp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+  <a href="https://wa.me/5532999644209?text=Olá%20Mari!" class="wpp" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 
 </body>
 </html>
