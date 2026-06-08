@@ -177,7 +177,7 @@ nav{
 }
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url('DSC08741.JPG');
+  background-image:url('DSC08746.JPG');
   background-size:cover;background-position:center 20%;
   filter:brightness(0.62) saturate(1.15) contrast(1.05);
 }
@@ -251,22 +251,53 @@ nav{
 
 /* ══════════ SEÇÃO 2 — O QUE MUDA ══════════ */
 #o-que-muda{
-  background:var(--li);
+  background:var(--ge);
   padding:96px 0;
 }
-.muda-inner{
-  max-width:800px;margin:0 auto;padding:0 24px;text-align:center;
+.muda-outer{
+  max-width:820px;margin:0 auto;padding:0 24px;
 }
-.muda-inner .eyebrow{color:var(--aa)}
+.muda-win{
+  background:rgba(255,255,255,0.52);
+  backdrop-filter:blur(40px) saturate(220%) brightness(1.04);
+  -webkit-backdrop-filter:blur(40px) saturate(220%) brightness(1.04);
+  border-radius:14px;
+  border:0.5px solid rgba(255,255,255,0.68);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,0.92),
+    inset 0 -0.5px 0 rgba(0,0,0,0.03),
+    0 24px 64px rgba(74,102,112,0.12),
+    0 4px 12px rgba(0,0,0,0.06);
+  overflow:hidden;
+}
+.muda-tb{
+  height:44px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(20px) saturate(180%);
+  -webkit-backdrop-filter:blur(20px) saturate(180%);
+  display:flex;align-items:center;
+  padding:0 16px;gap:12px;
+  border-bottom:0.5px solid rgba(255,255,255,0.5);
+}
+.muda-tb-title{
+  font-size:13px;font-weight:500;color:rgba(0,0,0,0.5);
+  position:absolute;left:50%;transform:translateX(-50%);
+}
+.muda-tb-wrap{position:relative;display:flex;align-items:center;width:100%}
+.muda-body{
+  padding:40px 48px 44px;text-align:center;
+}
+.muda-body .eyebrow{color:var(--aa)}
 .muda-h2{
-  font-size:clamp(26px,3.5vw,44px);font-weight:200;
-  color:var(--an);letter-spacing:-0.02em;line-height:1.2;
-  margin-bottom:20px;
+  font-size:clamp(24px,3.2vw,40px);font-weight:200;
+  color:var(--an);letter-spacing:-0.02em;line-height:1.25;
+  margin-bottom:18px;
 }
 .muda-lead{
-  font-size:clamp(16px,1.8vw,19px);font-weight:300;
+  font-size:clamp(15px,1.7vw,18px);font-weight:300;
   color:var(--aa);line-height:1.7;
 }
+@media(max-width:600px){.muda-body{padding:28px 24px 32px}}
 
 /* ══════════ SEÇÃO 3 — SERVIÇOS ══════════ */
 #servicos{background:var(--an)}
@@ -591,16 +622,16 @@ footer{
     <div class="nav-links">
       <a href="#servicos">Serviços</a>
       <a href="#como-trabalho">Como trabalho</a>
-      <a href="#como-comecar">Formulário</a>
+      <a href="/fomulario/">Formulário</a>
       <a href="#para-quem">Pra minha empresa?</a>
       <a href="#quem-sou">Quem sou eu</a>
       <a href="/blog/">Blog</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-mob">
-      <a href="#como-comecar" class="nav-cta">Marcar uma conversa</a>
+      <a href="/fomulario/" class="nav-cta">Marcar uma conversa</a>
     </div>
-    <a href="#como-comecar" class="nav-cta" style="display:none" id="nav-cta-desktop">Marcar uma conversa</a>
+    <a href="/fomulario/" class="nav-cta" style="display:none" id="nav-cta-desktop">Marcar uma conversa</a>
   </div>
 </nav>
 <script>
@@ -616,11 +647,11 @@ footer{
   <div class="hero-inner">
     <div class="hero-text">
       <span class="eyebrow">Marketing digital sem ponta solta.</span>
-      <h1 class="hero-h1">O digital não é um atalho para o sucesso empresarial. É apenas outro mercado para conquistar, com a diferença de que nenhum mercado físico oferece o alcance e a escala que a internet oferece.</h1>
-      <p class="hero-sub">Redes sociais como ferramentas de aquisição de leads em massa, IAs e automações para qualificação e quebra de objeção, CRM para otimização de processos e fornecimento de dados para melhorar a inteligência da operação digital. Sua empresa funcionando 24h por dia no ano.</p>
+      <h1 class="hero-h1">O digital é outro mercado pra conquistar, com o benefício que nenhum mercado físico oferece: alcance e escala!</h1>
+      <p class="hero-sub">Redes sociais como ferramentas de aquisição de leads em massa, IAs e automações para qualificação e quebra de objeção, CRM para otimização de processos e fornecimento de dados para melhorar a inteligência da operação digital. Isso é o mesmo que sua empresa e um time comercial funcionando 24h por dia.</p>
       <div class="hero-ctas">
         <a href="#servicos" class="btn-primary">O que eu vou contratar →</a>
-        <a href="#como-comecar" class="btn-secondary">Marcar uma conversa</a>
+        <a href="/fomulario/" class="btn-secondary">Marcar uma conversa</a>
       </div>
     </div>
     <div class="hero-cards">
@@ -645,10 +676,20 @@ footer{
 
 <!-- ══════════ SEÇÃO 2 — O QUE MUDA ══════════ -->
 <section id="o-que-muda">
-  <div class="muda-inner">
-    <span class="eyebrow">O que muda:</span>
-    <h2 class="muda-h2">Mais visibilidade pra sua empresa, mais demanda qualificada pro seu comercial, mais faturamento, mais expansão e projeção de lucros.</h2>
-    <p class="muda-lead">Se a sua empresa já existe no digital e cada canal opera de forma isolada, só o investimento cresce. Os resultados, não.</p>
+  <div class="muda-outer">
+    <div class="muda-win">
+      <div class="muda-tb">
+        <div class="tl"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+        <div class="muda-tb-wrap">
+          <span class="muda-tb-title">O que muda</span>
+        </div>
+      </div>
+      <div class="muda-body">
+        <span class="eyebrow">O que muda:</span>
+        <h2 class="muda-h2">Mais visibilidade pra sua empresa, mais demanda qualificada pro seu comercial, mais faturamento, mais expansão e projeção de lucros.</h2>
+        <p class="muda-lead">Se a sua empresa já existe no digital e cada canal opera de forma isolada, só o investimento cresce. Os resultados, não.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -677,7 +718,7 @@ footer{
           <span class="badge">Para quem já tem equipe</span>
           <p class="srv-name">Direção de Marketing — Head Fracional</p>
           <h3 class="srv-title">Planejamento da execução de todos os canais de aquisição no digital</h3>
-          <p class="srv-text">Assumo a cadeira de Head de Marketing dentro do seu negócio. Faço a gestão estratégica de quem já está operando: briefing, direcionamento, priorização e alinhamento com o processo comercial. A equipe executa, eu dirijo. Indicadores, plataformas de interações e automações de e-mail marketing e atendimento também fazem parte da minha implementação e gestão.</p>
+          <p class="srv-text">Assumo a cadeira de Head de Marketing dentro do seu negócio. Faço a gestão estratégica de quem já está operando: briefing, direcionamento, priorização e alinhamento com o processo comercial. A equipe executa, eu dirijo. Indicadores, plataformas de interações e automações de e-mail marketing também fazem parte da minha implementação e gestão.</p>
         </div>
       </div>
 
