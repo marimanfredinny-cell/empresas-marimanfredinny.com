@@ -425,7 +425,13 @@ nav{
 .sobre-num:last-child{border-bottom:none;padding-bottom:0}
 .sobre-num-big{font-size:38px;font-weight:200;letter-spacing:-0.04em;color:#fff;line-height:1}
 .sobre-num-label{font-size:12px;font-weight:300;color:rgba(255,255,255,0.5);margin-top:5px}
-@media(max-width:860px){.sobre-inner{grid-template-columns:1fr}.sobre-nums{display:none}}
+@media(max-width:860px){
+  .sobre-inner{grid-template-columns:1fr;}
+  /* Mostra painel de números no mobile em coluna */
+  .sobre-nums{display:flex;flex-direction:row;flex-wrap:wrap;gap:0;}
+  .sobre-num{border-bottom:none;border-right:0.5px solid rgba(255,255,255,0.1);padding:16px 20px;flex:1;min-width:120px;}
+  .sobre-num:last-child{border-right:none;}
+}
 
 /* ══════════ FAQ ══════════ */
 #faq{background:var(--an);padding:96px 0}
@@ -547,7 +553,33 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 .hero-win-body .hero-h1{font-size:clamp(16px,1.9vw,25px);font-weight:300;line-height:1.4;letter-spacing:-0.01em;margin:10px 0 22px;color:#fff;}
 .hero-win-body .eyebrow{margin-bottom:8px;}
 .hero-notifs{flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding-top:8px;}
-@media(max-width:900px){.hero-upper{flex-direction:column;padding:80px 24px 28px;}.hero-notifs{display:none}.hero-win{max-width:100%;width:100%;}}
+@media(max-width:900px){
+  /* Hero: empurra conteúdo para o fundo e mostra notificações */
+  .hero-upper{
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:80px 20px 32px;
+    gap:12px;
+  }
+  .hero-win{max-width:100%;width:100%;}
+  /* Notificações acima da janela, em linha rolável */
+  .hero-notifs{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    gap:10px;
+    padding-bottom:4px;
+    order:-1;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .hero-notifs::-webkit-scrollbar{display:none;}
+  .hero-notifs .notif{
+    min-width:240px;
+    flex-shrink:0;
+  }
+}
 
 /* ══════ SERVICOS — ANIMATED GRADIENT FULL-SCREEN ══════ */
 #servicos{
@@ -620,18 +652,29 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 
 /* ══════════ MOBILE — CORREÇÕES COMPLETAS ══════════ */
 
-/* Impede overflow do título na barra das janelas macOS */
-.mw-tb-title,.muda-tb-title{
-  max-width:calc(100% - 72px);
-  overflow:hidden;
-  text-overflow:ellipsis;
+/* ── Título da barra das janelas: quebra linha, não trunca ── */
+@media(max-width:900px){
+  .mw-tb,.muda-tb{height:auto;min-height:44px;padding:10px 16px;align-items:center;}
+  .mw-tb-title,.muda-tb-title{
+    position:relative;left:0;transform:none;
+    white-space:normal;
+    text-align:center;
+    width:100%;
+    max-width:calc(100% - 8px);
+    overflow:visible;
+    font-size:11px;
+    line-height:1.4;
+    padding:2px 0;
+  }
 }
 
 /* ── Tablet / telefone grande (≤768px) ── */
 @media(max-width:768px){
   section{padding:72px 0;}
-  .hero-win-body{padding:20px 22px 24px;}
+  .hero-win-body{padding:20px 20px 24px;}
   .hero-win-body .hero-h1{font-size:15px;line-height:1.45;}
+  .hero-ctas{flex-direction:column;gap:10px;}
+  .hero-ctas .btn-primary,.hero-ctas .btn-secondary{width:100%;justify-content:center;}
   #servicos .wrap{padding:72px 20px 40px;}
   .s3-head{margin-bottom:40px;}
   .met-inner{padding:72px 20px 40px;}
@@ -639,6 +682,7 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   .met-notif-grid{margin-top:28px;gap:12px;}
   #como-comecar{padding:72px 0;}
   .sobre-inner{padding:72px 20px;}
+  .sobre-nums{margin-top:24px;}
   .pq-interactive{padding:22px 20px;}
   .pq-interactive-body{flex-direction:column;}
   .cases-inner{padding:0 20px;}
@@ -657,11 +701,10 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   .nav-inner{padding:0 18px;}
 
   /* Hero */
-  .hero-upper{padding:68px 18px 24px;}
-  .hero-win-body{padding:16px 18px 20px;}
+  .hero-upper{padding:68px 18px 28px;}
+  .hero-win-body{padding:14px 16px 18px;}
   .hero-win-body .hero-h1{font-size:14px;line-height:1.5;margin:8px 0 16px;}
-  .hero-ctas{flex-direction:column;gap:10px;}
-  .hero-ctas .btn-primary,.hero-ctas .btn-secondary{width:100%;justify-content:center;}
+  .hero-notifs .notif{min-width:210px;}
 
   /* O que muda */
   .muda-outer{padding:0 16px;}
@@ -700,6 +743,8 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   /* Quem sou */
   .sobre-inner{padding:56px 16px;}
   .sobre-text{font-size:14px;}
+  .sobre-num{min-width:100px;}
+  .sobre-num-big{font-size:28px;}
 
   /* FAQ */
   .faq-inner{padding:0 16px;}
