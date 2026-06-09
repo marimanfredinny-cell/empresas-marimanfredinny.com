@@ -554,17 +554,22 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 .hero-win-body .eyebrow{margin-bottom:8px;}
 .hero-notifs{flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding-top:8px;}
 @media(max-width:900px){
-  /* Hero: empurra conteúdo para o fundo e mostra notificações */
   .hero-bg{background-image:url('fundo hero mobile.jpg');background-position:center center;}
+  /* Absolute positioning elimina qualquer interferência de flex:1 */
+  #hero{display:block;position:relative;}
   .hero-upper{
-    flex-direction:column;
-    justify-content:flex-end;
-    padding:80px 20px 8px;
-    gap:8px;
+    position:absolute;bottom:0;left:0;right:0;
+    max-width:none;margin:0;
+    display:flex;flex-direction:column;align-items:stretch;
+    gap:12px;padding:0 20px 52px;
+    z-index:2;
   }
-  .hero-win{max-width:100%;width:100%;flex:none;}
+  .hero-win{flex:none;max-width:100%;width:100%;}
   .hero-notifs{display:flex;flex-direction:column;gap:8px;width:100%;}
   .hero-notifs .notif{width:100%;}
+  .hero-notifs .notif-icon{width:36px;height:36px;font-size:18px;}
+  .hero-notifs .notif-title{font-size:14px;}
+  .hero-notifs .notif-desc{font-size:12px;}
 }
 
 /* ══════ SERVICOS — ANIMATED GRADIENT FULL-SCREEN ══════ */
@@ -732,10 +737,9 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   .nav-inner{padding:0 18px;}
 
   /* Hero */
-  .hero-upper{padding:68px 18px 28px;}
+  .hero-upper{padding:0 18px 40px;}
   .hero-win-body{padding:14px 16px 18px;}
   .hero-win-body .hero-h1{font-size:14px;line-height:1.5;margin:8px 0 16px;}
-  .hero-notifs .notif{min-width:210px;}
 
   /* O que muda */
   .muda-outer{padding:0 16px;}
