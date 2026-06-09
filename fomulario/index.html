@@ -743,13 +743,34 @@
       `*E-mail:* ${answers.email || '-'}`
     );
 
-    // Show success
+    // Show success immediately
     document.getElementById('mainForm').style.display = 'none';
     document.querySelector('.progress-wrap').style.display = 'none';
     document.getElementById('successScreen').style.display = 'block';
 
     // Update WPP button with full context
     document.querySelector('.btn-wpp').href = `https://wa.me/5532999644209?text=${msg}`;
+
+    // Send email notification via Web3Forms (silent — does not block UX)
+    const payload = new FormData();
+    payload.append('access_key', 'aeff79c5-c681-41ba-a770-e52a3ed53d74');
+    payload.append('subject', 'Novo diagnóstico preenchido — ' + answers.nome);
+    payload.append('from_name', 'Formulário empresa.marimanfredinny.com');
+    payload.append('Nome', answers.nome || '-');
+    payload.append('WhatsApp', answers.whatsapp || '-');
+    payload.append('Email', answers.email || '-');
+    payload.append('Segmento', answers.seg || '-');
+    payload.append('Situação atual', answers.sit || '-');
+    payload.append('Objetivo', answers.obj || '-');
+    payload.append('Investimento em tráfego', answers.inv || '-');
+    payload.append('Empresa', answers.empresa || '-');
+    payload.append('Cidade', answers.cidade || '-');
+    payload.append('Site', answers.site || '-');
+    payload.append('Instagram', answers.instagram || '-');
+    payload.append('LinkedIn', answers.linkedin || '-');
+    payload.append('YouTube', answers.youtube || '-');
+    payload.append('Desafio', answers.desafio || '-');
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: payload }).catch(() => {});
   }
 
   updateProgress(1);
