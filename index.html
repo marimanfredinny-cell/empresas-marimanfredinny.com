@@ -268,7 +268,7 @@ nav{
 .cc-card-text{font-size:13px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.65;margin-bottom:24px}
 .cc-card-cta{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:0.5px solid rgba(255,255,255,0.26);border-radius:20px;padding:11px 20px;font-size:13px;font-weight:500;color:#fff;transition:background 0.15s;box-shadow:inset 0 1px 0 rgba(255,255,255,0.2);width:100%;justify-content:center;}
 .cc-card-cta:hover{background:rgba(255,255,255,0.2)}
-@media(max-width:820px){.cc-inner{grid-template-columns:1fr}.cc-aside{display:none}}
+@media(max-width:820px){.cc-aside{margin-top:32px;}}
 
 /* ══════════ SEÇÃO 6 — CASES ══════════ */
 #cases{background:var(--an);padding:96px 0;}
@@ -412,7 +412,7 @@ nav{
 .ticker-notif-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
 
 /* ══════════ SEÇÃO 8 — SOBRE ══════════ */
-#quem-sou{position:relative;min-height:520px;display:flex;align-items:center;overflow:hidden;}
+#quem-sou{position:relative;min-height:100vh;overflow:hidden;}
 .sobre-bg{position:absolute;inset:0;background-image:url('DSC08746.JPG');background-size:cover;background-position:center 25%;filter:brightness(0.62) saturate(1.15) contrast(1.05);}
 .sobre-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0.72) 65%,rgba(0,0,0,0.97) 100%);}
 .sobre-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:80px 24px;width:100%;display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:center;}
@@ -458,6 +458,131 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:200;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.12);backdrop-filter:blur(20px) saturate(200%);-webkit-backdrop-filter:blur(20px) saturate(200%);border:0.5px solid rgba(255,255,255,0.28);box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.4),0 8px 28px rgba(0,0,0,0.28);display:flex;align-items:center;justify-content:center;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),background 0.15s;}
 .wa-float:hover{transform:scale(1.1);background:rgba(255,255,255,0.2)}
 .wa-float svg{width:26px;height:26px;fill:#fff}
+
+/* ══════════ NOTIFICATION WIDGET ══════════ */
+.notif{
+  background:rgba(255,255,255,0.09);
+  backdrop-filter:blur(28px) saturate(200%) brightness(1.06);
+  -webkit-backdrop-filter:blur(28px) saturate(200%) brightness(1.06);
+  border:0.5px solid rgba(255,255,255,0.16);
+  border-radius:16px;padding:13px 15px;
+  display:flex;align-items:flex-start;gap:11px;
+  width:min(290px,100%);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.22),0 8px 32px rgba(0,0,0,0.24);
+}
+.notif-icon{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.notif-body{flex:1;min-width:0;}
+.notif-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;}
+.notif-app{font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+.notif-time{font-size:10px;color:rgba(255,255,255,0.35);}
+.notif-title{font-size:13px;font-weight:600;color:rgba(255,255,255,0.92);margin-bottom:2px;line-height:1.3;}
+.notif-desc{font-size:11px;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.4;}
+.notif-stack{display:flex;flex-direction:column;gap:10px;}
+
+/* ══════════ SECTION BOTTOM DISPLAY TEXT ══════════ */
+.sec-display{
+  position:relative;z-index:2;
+  padding:36px 64px 60px;
+  border-top:0.5px solid rgba(255,255,255,0.07);
+}
+.sec-display-heading{
+  font-size:clamp(30px,5vw,68px);
+  font-weight:200;letter-spacing:-0.03em;color:#fff;line-height:1.05;
+  max-width:900px;
+}
+.sec-display-sub{
+  font-size:clamp(13px,1.2vw,16px);font-weight:300;
+  color:rgba(255,255,255,0.6);margin-top:14px;
+  max-width:520px;line-height:1.65;
+}
+.sec-handle{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.1);
+  border:0.5px solid rgba(255,255,255,0.2);
+  border-radius:20px;padding:7px 14px;
+  font-size:13px;font-weight:400;color:rgba(255,255,255,0.65);
+  margin-top:18px;
+}
+.sec-handle::before{content:'●';color:#28C840;font-size:8px;margin-right:2px;}
+@media(max-width:768px){.sec-display{padding:32px 24px 48px;}}
+
+/* ══════════ ANIMATED GRADIENT BG ══════════ */
+@keyframes grad-move{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* ══════════ METHOD NOTIFICATION CARDS ══════════ */
+.met-notif-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;}
+.met-notif{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(40px) saturate(200%) brightness(1.06);
+  -webkit-backdrop-filter:blur(40px) saturate(200%) brightness(1.06);
+  border:0.5px solid rgba(255,255,255,0.15);
+  border-radius:18px;overflow:hidden;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.22),0 8px 32px rgba(0,0,0,0.2);
+  transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+.met-notif:hover{transform:translateY(-3px);}
+.met-notif-header{display:flex;align-items:center;justify-content:space-between;padding:13px 16px 0;}
+.met-notif-app{font-size:10px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.45);}
+.met-notif-time{font-size:10px;color:rgba(255,255,255,0.3);}
+.met-notif-body{padding:8px 16px 18px;display:flex;gap:13px;align-items:flex-start;}
+.met-notif-ico{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;background:rgba(255,255,255,0.1);}
+.met-notif-content{flex:1;}
+.met-notif-title{font-size:15px;font-weight:500;color:#fff;margin-bottom:5px;}
+.met-notif-text{font-size:12px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.55;}
+@media(max-width:680px){.met-notif-grid{grid-template-columns:1fr}}
+
+/* ══════ HERO — FULL-SCREEN REDESIGN ══════ */
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;padding:0;}
+.hero-upper{
+  position:relative;z-index:2;flex:1;
+  display:flex;align-items:flex-start;justify-content:space-between;gap:24px;
+  max-width:1160px;margin:0 auto;width:100%;padding:84px 64px 40px;
+}
+.hero-win{flex:1;max-width:580px;}
+.hero-win-body{padding:28px 32px 32px;}
+.hero-win-body .hero-h1{font-size:clamp(16px,1.9vw,25px);font-weight:300;line-height:1.4;letter-spacing:-0.01em;margin:10px 0 22px;color:#fff;}
+.hero-win-body .eyebrow{margin-bottom:8px;}
+.hero-notifs{flex-shrink:0;display:flex;flex-direction:column;gap:10px;padding-top:8px;}
+@media(max-width:900px){.hero-upper{flex-direction:column;padding:80px 24px 28px;}.hero-notifs{display:none}.hero-win{max-width:100%;width:100%;}}
+
+/* ══════ SERVICOS — ANIMATED GRADIENT FULL-SCREEN ══════ */
+#servicos{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;
+  background:linear-gradient(-45deg,#0d1e27,#1e3540,#243d4d,#0a1828,#152d3a);
+  background-size:400% 400%;animation:grad-move 14s ease infinite;
+  padding:0;
+}
+#servicos::before{content:none;}
+#servicos .wrap{position:relative;z-index:1;flex:1;max-width:1160px;margin:0 auto;width:100%;padding:80px 24px 40px;}
+
+/* ══════ COMO TRABALHO — FULL-SCREEN ══════ */
+#como-trabalho{
+  position:relative;min-height:100vh;display:flex;flex-direction:column;
+  background-image:url('DSC08517.JPG');
+  background-size:cover;background-position:center 35%;
+  padding:0;overflow:hidden;
+}
+#como-trabalho::before{content:'';position:absolute;inset:0;background:rgba(20,36,44,0.82);}
+.met-inner{position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:80px 64px 40px;width:100%;}
+@media(max-width:768px){.met-inner{padding:80px 24px 40px;}}
+
+/* ══════ COMO COMEÇAR — SINGLE COLUMN ══════ */
+.cc-inner{max-width:900px;margin:0 auto;padding:0 64px;display:flex;flex-direction:column;gap:0;}
+@media(max-width:768px){.cc-inner{padding:0 24px;}}
+.cc-box{
+  border-radius:16px;padding:24px 28px;margin:0 0 40px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(40px) saturate(200%) brightness(1.06);
+  -webkit-backdrop-filter:blur(40px) saturate(200%) brightness(1.06);
+  border:0.5px solid rgba(255,255,255,0.18);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.22),0 8px 32px rgba(0,0,0,0.2);
+}
+.cc-box-text{font-size:15px;font-weight:300;color:rgba(255,255,255,0.8);line-height:1.75;}
+.cc-box-text p+p{margin-top:14px;}
 
 /* ══════════ BLOG PREVIEW ══════════ */
 #blog-preview{background:var(--li);padding:80px 0;}
@@ -516,33 +641,62 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-inner">
-    <div class="hero-text">
-      <span class="eyebrow">Marketing digital sem ponta solta.</span>
-      <h1 class="hero-h1">Não existe empresa forte no digital sem o mesmo esforço que ela dedicaria para crescer fora dele.</h1>
-      <p class="hero-sub">Ter uma empresa no digital exige o mesmo comprometimento que construir uma empresa no mundo físico. E o maior benefício é o potencial de alcance e retorno exponencialmente maior!</p>
-      <div class="hero-ctas">
-        <a href="#servicos" class="btn-primary">Qual a melhor opção pra minha empresa →</a>
-        <a href="/fomulario/" class="btn-secondary">Marcar uma conversa</a>
+  <div class="hero-upper">
+    <div class="hero-win mac-reveal">
+      <div class="mw dark">
+        <div class="mw-tb">
+          <div class="tl"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="mw-tb-wrap"><span class="mw-tb-title">Mariana Manfredinny</span></div>
+        </div>
+        <div class="hero-win-body">
+          <span class="eyebrow">Marketing digital sem ponta solta.</span>
+          <h1 class="hero-h1">Construir uma empresa no digital exige o mesmo comprometimento que construir uma empresa no mundo físico. A diferença é que, na internet, o potencial de alcance, crescimento e retorno é exponencialmente maior.</h1>
+          <div class="hero-ctas">
+            <a href="#servicos" class="btn-primary">Qual a melhor opção pra minha empresa →</a>
+            <a href="/fomulario/" class="btn-secondary">Marcar uma conversa</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="hero-cards">
-      <div class="hero-card">
-        <p class="card-label">Sua empresa sendo sugerida em pesquisas por IA, seu site bem colocado nas buscas do Google...</p>
-        <p class="card-title">Estratégia + execução integradas</p>
+    <div class="hero-notifs mac-reveal">
+      <div class="notif">
+        <div class="notif-icon" style="background:rgba(255,82,82,0.22)">📣</div>
+        <div class="notif-body">
+          <div class="notif-row">
+            <span class="notif-app">Digital</span>
+            <span class="notif-time">agora mesmo</span>
+          </div>
+          <p class="notif-title">Empresa aparecendo nas IAs</p>
+          <p class="notif-desc">SEO + GEO ativos · Sugerida em pesquisas</p>
+        </div>
       </div>
-      <div class="hero-card dark-card">
-        <p class="card-label">Seu fluxo comercial funcionando 24h por dia o ano todo</p>
-        <p class="card-big">+40%</p>
-        <p class="card-sub">faturamento em meses</p>
-        <p class="card-sub" style="margin-top:10px">Um marketing que coloca sua empresa à frente de quem a procura não é só tráfego pago.</p>
+      <div class="notif">
+        <div class="notif-icon" style="background:rgba(40,200,100,0.18)">📈</div>
+        <div class="notif-body">
+          <div class="notif-row">
+            <span class="notif-app">Comercial</span>
+            <span class="notif-time">agora mesmo</span>
+          </div>
+          <p class="notif-title">Lead qualificado chegando</p>
+          <p class="notif-desc">Google Ads → CRM · R$ 45k em potencial</p>
+        </div>
       </div>
-      <div class="hero-card">
-        <p class="card-label">Processo de venda mais curto</p>
-        <p class="card-title">Seu cliente chegando na sua equipe comercial pronto pra fechar negócio.</p>
-        <p class="card-sub" style="margin-top:10px">Para existir no digital, uma empresa precisa da mesma coisa que no offline: investimento, consistência e gestão.</p>
+      <div class="notif">
+        <div class="notif-icon" style="background:rgba(100,160,255,0.18)">🎯</div>
+        <div class="notif-body">
+          <div class="notif-row">
+            <span class="notif-app">Tráfego</span>
+            <span class="notif-time">agora mesmo</span>
+          </div>
+          <p class="notif-title">Meta Pixel disparado</p>
+          <p class="notif-desc">Conversão registrada com deduplicação CAPI</p>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="sec-display">
+    <p class="sec-display-heading">Próximo passo<br>é seu.</p>
+    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
   </div>
 </section>
 
@@ -593,7 +747,7 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#e8f0f4">🏗️</span>Construtoras</span>
     <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#f4f4e8">🏠</span>Imobiliárias</span>
     <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#ece8f4">🧠</span>Psicólogos</span>
-    <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#e8f4ec">💪</span>Personal Trainers</span>
+    <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#e8eef4">🏢</span>Empresa B2B</span>
     <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#e8f4f0">🥗</span>Nutricionistas</span>
     <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#f0e8f4">⚖️</span>Advogados</span>
     <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#e8eef4">🦷</span>Dentistas</span>
@@ -603,17 +757,37 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#e8f0f4">🏗️</span>Construtoras</span>
     <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#f4f4e8">🏠</span>Imobiliárias</span>
     <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#ece8f4">🧠</span>Psicólogos</span>
-    <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#e8f4ec">💪</span>Personal Trainers</span>
+    <span class="ticker-notif"><span class="ticker-notif-icon" style="background:#e8eef4">🏢</span>Empresa B2B</span>
   </div>
 </div>
 
 <!-- ══════════ SEÇÃO 3 — SERVIÇOS ══════════ -->
 <section id="servicos">
   <div class="wrap">
-    <div class="s3-head mac-reveal">
-      <span class="eyebrow">O que entrego</span>
-      <h2 class="s3-h2">Quatro formas de atuar. Uma direção estratégica.</h2>
-      <p class="s3-lead">O modelo depende de onde o seu negócio está. Equipe formada ou do zero, investimento rodando ou ainda por estruturar.</p>
+    <div class="s3-head mac-reveal" style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:260px;">
+        <span class="eyebrow">O que entrego</span>
+        <h2 class="s3-h2">Quatro formas de atuar. Uma direção estratégica.</h2>
+        <p class="s3-lead">O modelo depende de onde o seu negócio está. Equipe formada ou do zero, investimento rodando ou ainda por estruturar.</p>
+      </div>
+      <div class="notif-stack mac-reveal" style="padding-top:36px;">
+        <div class="notif">
+          <div class="notif-icon" style="background:rgba(255,180,50,0.2)">⚡</div>
+          <div class="notif-body">
+            <div class="notif-row"><span class="notif-app">Estratégia</span><span class="notif-time">agora mesmo</span></div>
+            <p class="notif-title">Diagnóstico concluído</p>
+            <p class="notif-desc">Plano de ação pronto para execução</p>
+          </div>
+        </div>
+        <div class="notif">
+          <div class="notif-icon" style="background:rgba(100,200,150,0.18)">🔗</div>
+          <div class="notif-body">
+            <div class="notif-row"><span class="notif-app">CRM</span><span class="notif-time">agora mesmo</span></div>
+            <p class="notif-title">Integração ativa</p>
+            <p class="notif-desc">Tráfego → CRM · Funil funcionando 24h</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="servicos-grid">
 
@@ -641,6 +815,11 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 
     </div>
   </div>
+  <div class="sec-display">
+    <p class="sec-display-heading">Quatro formas de atuar.<br>Uma direção estratégica.</p>
+    <p class="sec-display-sub">Do zero ou com equipe formada, o modelo de trabalho se adapta ao momento do seu negócio.</p>
+    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
+  </div>
 </section>
 
 <!-- ══════════ SEÇÃO 4 — MÉTODO ══════════ -->
@@ -651,68 +830,109 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
       <h2 class="met-h2">Estratégia desenhada para o seu negócio.</h2>
       <p class="met-lead">Antes de qualquer execução, eu entendo o processo de aquisição de clientes da sua empresa, clínica, escritório, seus concorrentes e o público ideal. A estratégia vem do diagnóstico. O resultado vem da estratégia.</p>
     </div>
-    <div class="steps-grid">
-      <div class="step mac-reveal">
-        <p class="step-num">01</p>
-        <h3 class="step-title">Diagnóstico</h3>
-        <p class="step-text">Levantamento completo do estado atual da empresa no digital. Onde você está, onde deveria estar e o que está travando os resultados.</p>
+    <div class="met-notif-grid">
+      <div class="met-notif mac-reveal">
+        <div class="met-notif-header">
+          <span class="met-notif-app">Como trabalho</span>
+          <span class="met-notif-time">etapa 01</span>
+        </div>
+        <div class="met-notif-body">
+          <div class="met-notif-ico">🔍</div>
+          <div class="met-notif-content">
+            <p class="met-notif-title">Diagnóstico</p>
+            <p class="met-notif-text">Levantamento completo do estado atual da empresa no digital. Onde você está, onde deveria estar e o que está travando os resultados.</p>
+          </div>
+        </div>
       </div>
-      <div class="step mac-reveal">
-        <p class="step-num">02</p>
-        <h3 class="step-title">Estratégia</h3>
-        <p class="step-text">Plano estruturado com base no diagnóstico. Canais, prioridades, cronograma e métricas de sucesso definidos antes da execução começar.</p>
+      <div class="met-notif mac-reveal">
+        <div class="met-notif-header">
+          <span class="met-notif-app">Como trabalho</span>
+          <span class="met-notif-time">etapa 02</span>
+        </div>
+        <div class="met-notif-body">
+          <div class="met-notif-ico">🗺️</div>
+          <div class="met-notif-content">
+            <p class="met-notif-title">Estratégia</p>
+            <p class="met-notif-text">Plano estruturado com base no diagnóstico. Canais, prioridades, cronograma e métricas de sucesso definidos antes da execução começar.</p>
+          </div>
+        </div>
       </div>
-      <div class="step mac-reveal">
-        <p class="step-num">03</p>
-        <h3 class="step-title">Execução</h3>
-        <p class="step-text">Implementação de todos os canais de aquisição com foco em resultado comercial. Cada ação conectada ao funil de vendas digital da empresa.</p>
+      <div class="met-notif mac-reveal">
+        <div class="met-notif-header">
+          <span class="met-notif-app">Como trabalho</span>
+          <span class="met-notif-time">etapa 03</span>
+        </div>
+        <div class="met-notif-body">
+          <div class="met-notif-ico">⚙️</div>
+          <div class="met-notif-content">
+            <p class="met-notif-title">Execução</p>
+            <p class="met-notif-text">Implementação de todos os canais de aquisição com foco em resultado comercial. Cada ação conectada ao funil de vendas digital da empresa.</p>
+          </div>
+        </div>
       </div>
-      <div class="step mac-reveal">
-        <p class="step-num">04</p>
-        <h3 class="step-title">Análise e ajuste</h3>
-        <p class="step-text">Leitura contínua dos dados, identificação de gargalos e otimização baseada em resultado real. O digital que não mede, não melhora.</p>
+      <div class="met-notif mac-reveal">
+        <div class="met-notif-header">
+          <span class="met-notif-app">Como trabalho</span>
+          <span class="met-notif-time">etapa 04</span>
+        </div>
+        <div class="met-notif-body">
+          <div class="met-notif-ico">📊</div>
+          <div class="met-notif-content">
+            <p class="met-notif-title">Análise e ajuste</p>
+            <p class="met-notif-text">Leitura contínua dos dados, identificação de gargalos e otimização baseada em resultado real. O digital que não mede, não melhora.</p>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="sec-display">
+    <p class="sec-display-heading">Estratégia desenhada<br>para o seu negócio.</p>
+    <p class="sec-display-sub">A estratégia vem do diagnóstico. O resultado vem da estratégia.</p>
+    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
   </div>
 </section>
 
 <!-- ══════════ SEÇÃO 5 — COMO COMEÇAR ══════════ -->
 <section id="como-comecar">
   <div class="cc-inner">
-    <div class="cc-main mac-reveal">
+    <div class="mac-reveal">
       <span class="eyebrow">Como começar</span>
       <h2 class="cc-h2">Do primeiro contato à estratégia na mesa.</h2>
-      <p class="cc-lead">O formulário a seguir serve para que eu saiba quem é você, sua empresa, e em que posição ela aparece quando o seu cliente te procura.<br><br>A reunião de diagnóstico é uma conversa objetiva sobre onde a sua empresa está hoje e onde pode chegar com as implementações que vou sugerir.</p>
-      <div class="cc-steps">
-        <div class="cc-step">
-          <span class="cc-step-num">01</span>
-          <div>
-            <h3 class="cc-step-title">Primeiro contato</h3>
-            <p class="cc-step-text">Você responde as perguntas do formulário. Depois combinamos uma conversa para você entender como cada mudança vai gerar impacto positivo na empresa desde o primeiro momento.</p>
-          </div>
-        </div>
-        <div class="cc-step">
-          <span class="cc-step-num">02</span>
-          <div>
-            <h3 class="cc-step-title">Reunião de diagnóstico e proposta</h3>
-            <p class="cc-step-text">Aqui eu vou te trazer um lado do digital que você não vê. A partir daqui, as suas decisões passam a ser tomadas com base em projeção e implementação do que é possível no momento.</p>
-          </div>
-        </div>
-        <div class="cc-step">
-          <span class="cc-step-num">03</span>
-          <div>
-            <h3 class="cc-step-title">Fechamento</h3>
-            <p class="cc-step-text">Nossa parceria só avança quando você consegue visualizar a expansão da sua empresa e a projeção de demanda que ela vai receber nos próximos meses. Caso contrário, já adianto: o investimento em tempo, energia e dinheiro não faz sentido pra você, nem pra mim. <em style="color:rgba(255,255,255,0.45)">(sinceramente, seus resultados colocam mais dinheiro no meu bolso do que o valor que você me paga por mês).</em></p>
-          </div>
+    </div>
+    <div class="cc-box mac-reveal">
+      <div class="cc-box-text">
+        <p>O formulário a seguir serve para que eu saiba quem é você, sua empresa, e em que posição ela aparece quando o seu cliente te procura.</p>
+        <p>A reunião de diagnóstico é uma conversa objetiva sobre onde a sua empresa está hoje e onde pode chegar com as implementações que vou sugerir.</p>
+      </div>
+    </div>
+    <div class="cc-steps mac-reveal">
+      <div class="cc-step">
+        <span class="cc-step-num">01</span>
+        <div>
+          <h3 class="cc-step-title">Primeiro contato</h3>
+          <p class="cc-step-text">Você responde as perguntas do formulário. Depois combinamos uma conversa para você entender como cada mudança vai gerar impacto positivo na empresa desde o primeiro momento.</p>
         </div>
       </div>
-      <a href="https://wa.me/5532999644209" target="_blank" rel="noopener" class="cc-btn">Agendar uma conversa no WhatsApp →</a>
+      <div class="cc-step">
+        <span class="cc-step-num">02</span>
+        <div>
+          <h3 class="cc-step-title">Reunião de diagnóstico e proposta</h3>
+          <p class="cc-step-text">Aqui eu vou te trazer um lado do digital que você não vê. A partir daqui, as suas decisões passam a ser tomadas com base em projeção e implementação do que é possível no momento.</p>
+        </div>
+      </div>
+      <div class="cc-step">
+        <span class="cc-step-num">03</span>
+        <div>
+          <h3 class="cc-step-title">Fechamento</h3>
+          <p class="cc-step-text">Nossa parceria só avança quando você consegue visualizar a expansão da sua empresa e a projeção de demanda que ela vai receber nos próximos meses. Caso contrário, já adianto: o investimento em tempo, energia e dinheiro não faz sentido pra você, nem pra mim. <em style="color:rgba(255,255,255,0.45)">(sinceramente, seus resultados colocam mais dinheiro no meu bolso do que o valor que você me paga por mês).</em></p>
+        </div>
+      </div>
     </div>
-    <div class="cc-aside mac-reveal">
+    <div class="cc-aside mac-reveal" style="margin-top:40px;">
       <div class="cc-card">
         <h3 class="cc-card-title">Essa conversa é gratuita.</h3>
         <p class="cc-card-text">O diagnóstico e o plano de ação são seus. Você sai dessa conversa sabendo tudo que precisa ser feito para alcançar seus objetivos no digital. Fechando negócio comigo, ou não.</p>
-        <a href="https://empresa.marimanfredinny.com/fomulario/" class="cc-card-cta">Responder formulário →</a>
+        <a href="/fomulario/" class="cc-card-cta">Responder formulário →</a>
       </div>
     </div>
   </div>
@@ -785,6 +1005,11 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 
     </div>
   </div>
+  <div class="sec-display" style="background:var(--an);">
+    <p class="sec-display-heading">Resultado que aparece<br>na conta bancária.</p>
+    <p class="sec-display-sub">Cada case foi construído com estratégia, execução e dado real de conversão.</p>
+    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
+  </div>
 </section>
 
 <!-- ══════════ SEÇÃO 7 — PARA QUEM ══════════ -->
@@ -838,10 +1063,10 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 </section>
 
 <!-- ══════════ SEÇÃO 8 — SOBRE ══════════ -->
-<section id="quem-sou">
+<section id="quem-sou" style="display:flex;flex-direction:column;">
   <div class="sobre-bg"></div>
   <div class="sobre-overlay"></div>
-  <div class="sobre-inner">
+  <div class="sobre-inner" style="flex:1;">
     <div class="sobre-text-wrap mac-reveal">
       <span class="eyebrow">Quem está por trás</span>
       <h2 class="sobre-h2">Mariana Manfredinny.</h2>
@@ -864,7 +1089,21 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
         <p class="sobre-num-big">100%</p>
         <p class="sobre-num-label">foco em resultado comercial</p>
       </div>
+      <div style="margin-top:8px;display:flex;flex-direction:column;gap:10px;">
+        <div class="notif">
+          <div class="notif-icon" style="background:rgba(255,220,80,0.18)">🏆</div>
+          <div class="notif-body">
+            <div class="notif-row"><span class="notif-app">Resultado</span><span class="notif-time">agora mesmo</span></div>
+            <p class="notif-title">Meta atingida</p>
+            <p class="notif-desc">R$ 2,4 mi em negócios gerados para clientes</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="sec-display" style="position:relative;z-index:2;">
+    <p class="sec-display-heading">4 anos de execução.<br>Resultado real.</p>
+    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
   </div>
 </section>
 
