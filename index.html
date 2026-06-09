@@ -182,22 +182,15 @@ nav{
 .s3-head{text-align:center;margin-bottom:56px}
 .s3-h2{font-size:clamp(26px,3.2vw,42px);font-weight:200;letter-spacing:-0.02em;line-height:1.2;margin-bottom:16px;}
 .s3-lead{font-size:15px;font-weight:300;color:rgba(255,255,255,0.6);max-width:480px;margin:0 auto;}
-.servicos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
-.srv-card{
-  border-radius:20px;padding:32px;
-  background:rgba(255,255,255,0.07);
-  backdrop-filter:blur(40px) saturate(200%) brightness(1.06);
-  -webkit-backdrop-filter:blur(40px) saturate(200%) brightness(1.06);
-  border:0.5px solid rgba(255,255,255,0.14);
-  box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.2),0 8px 32px rgba(0,0,0,0.18);
-  display:flex;flex-direction:column;gap:0;
-  transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.3s;
-}
-.srv-card:hover{transform:translateY(-4px);box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.2),0 20px 48px rgba(0,0,0,0.28);}
-.srv-badge{display:inline-block;font-size:10px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,0.1);border:0.5px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.6);margin-bottom:18px;}
-.srv-text{font-size:14px;font-weight:300;color:rgba(255,255,255,0.75);line-height:1.7;flex:1;}
-.srv-detail{margin-top:20px;padding-top:16px;border-top:0.5px solid rgba(255,255,255,0.1);font-size:12px;font-weight:400;color:rgba(255,255,255,0.45);font-style:italic;}
-@media(max-width:720px){.servicos-grid{grid-template-columns:1fr}}
+.entrego-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.srv-win-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;}
+.srv-win-icon{font-size:26px;line-height:1;margin-bottom:2px;}
+.srv-win-name{font-size:14px;font-weight:500;color:rgba(255,255,255,0.92);line-height:1.4;}
+.srv-win-desc{font-size:12px;font-weight:300;color:rgba(255,255,255,0.52);line-height:1.6;}
+.srv-win{transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.3s;}
+.srv-win:hover{transform:translateY(-4px);}
+@media(max-width:900px){.entrego-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:520px){.entrego-grid{grid-template-columns:1fr;}}
 
 /* ══════════ SEÇÃO 4 — MÉTODO ══════════ */
 #como-trabalho{
@@ -690,27 +683,6 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   .hero-ctas{flex-direction:column;gap:10px;}
   .hero-ctas .btn-primary,.hero-ctas .btn-secondary{width:100%;justify-content:center;}
   #servicos .wrap{padding:72px 20px 40px;}
-  /* Serviços: título em cima full-width, cards lado a lado centralizados */
-  .s3-head{flex-direction:column !important;align-items:stretch !important;gap:20px;}
-  .notif-stack{
-    padding-top:0 !important;width:100%;
-    display:grid !important;
-    grid-template-columns:1fr 1fr !important;
-    gap:10px !important;
-  }
-  .s3-head>div[style]{min-width:0 !important;}
-  /* Notif-stack: iOS notification style, text recolhido à esquerda */
-  .notif-stack .notif{
-    padding:10px 12px;gap:8px;width:100%;
-    align-items:flex-start;text-align:left;
-  }
-  .notif-stack .notif-icon{width:24px;height:24px;font-size:13px;border-radius:6px;flex-shrink:0;align-self:flex-start;}
-  .notif-stack .notif-body{flex:1;min-width:0;text-align:left;}
-  .notif-stack .notif-time{display:none;}
-  .notif-stack .notif-row{margin-bottom:3px;justify-content:flex-start;gap:4px;}
-  .notif-stack .notif-app{font-size:9px;font-weight:700;letter-spacing:0.06em;text-align:left;}
-  .notif-stack .notif-title{font-size:12px;font-weight:600;line-height:1.3;text-align:left;}
-  .notif-stack .notif-desc{font-size:10px;line-height:1.4;text-align:left;}
   .met-inner{padding:72px 20px 40px;}
   .met-head{margin-bottom:36px;}
   .met-notif-grid{margin-top:28px;gap:12px;}
@@ -746,7 +718,7 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   /* Serviços */
   #servicos .wrap{padding:56px 18px 36px;}
   .s3-head{margin-bottom:32px;}
-  .srv-card{padding:22px 18px;}
+  .srv-win-body{padding:16px 16px 20px;}
 
   /* Como Trabalho */
   .met-inner{padding:56px 18px 36px;}
@@ -994,58 +966,86 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 <!-- ══════════ SEÇÃO 3 — SERVIÇOS ══════════ -->
 <section id="servicos">
   <div class="wrap">
-    <div class="s3-head mac-reveal" style="display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;">
-      <div style="flex:1;min-width:260px;">
-        <span class="eyebrow">O que entrego</span>
-        <h2 class="s3-h2">Quatro formas de atuar. Uma direção estratégica.</h2>
-        <p class="s3-lead">O modelo depende de onde o seu negócio está. Equipe formada ou do zero, investimento rodando ou ainda por estruturar.</p>
-      </div>
-      <div class="notif-stack mac-reveal" style="padding-top:36px;">
-        <div class="notif">
-          <div class="notif-icon" style="background:rgba(255,180,50,0.2)">⚡</div>
-          <div class="notif-body">
-            <div class="notif-row"><span class="notif-app">Estratégia</span><span class="notif-time">agora mesmo</span></div>
-            <p class="notif-title">Diagnóstico concluído</p>
-            <p class="notif-desc">Plano de ação pronto para execução</p>
-          </div>
-        </div>
-        <div class="notif">
-          <div class="notif-icon" style="background:rgba(100,200,150,0.18)">🔗</div>
-          <div class="notif-body">
-            <div class="notif-row"><span class="notif-app">CRM</span><span class="notif-time">agora mesmo</span></div>
-            <p class="notif-title">Integração ativa</p>
-            <p class="notif-desc">Tráfego → CRM · Funil funcionando 24h</p>
-          </div>
-        </div>
-      </div>
+    <div class="s3-head mac-reveal">
+      <span class="eyebrow">O que entrego</span>
+      <h2 class="s3-h2">Uma direção estratégica.</h2>
     </div>
-    <div class="servicos-grid">
+    <div class="entrego-grid">
 
-      <div class="srv-card mac-reveal">
-        <span class="srv-badge">Para quem não tem equipe</span>
-        <p class="srv-text">Quando não existe equipe formada, assumo a operação inteira. Tráfego pago, CRM, Google Meu Negócio, automação, site e landing pages, plataformas interativas, conteúdos e SEO orquestrados por uma única direção com foco em resultado comercial.</p>
-        <p class="srv-detail">Construo sua empresa no digital com todas as automações e canais funcionando como uma engrenagem.</p>
+      <div class="mw dark srv-win mac-reveal">
+        <div class="mw-tb">
+          <div class="tl"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="mw-tb-wrap"><span class="mw-tb-title">Tráfego & Automação</span></div>
+        </div>
+        <div class="srv-win-body">
+          <div class="srv-win-icon">🎯</div>
+          <p class="srv-win-name">Gestão de tráfego pago + automação</p>
+          <p class="srv-win-desc">Meta Ads, Google Ads, TikTok Ads e LinkedIn Ads integrados a automações que qualificam e nutrem o lead antes de chegar no comercial.</p>
+        </div>
       </div>
 
-      <div class="srv-card mac-reveal">
-        <span class="srv-badge">Para quem já tem equipe</span>
-        <p class="srv-text">Crio estratégias e planejamento mensais, delego funções e acompanho o processo operacional de toda equipe envolvida no marketing digital da empresa alinhada com o comercial. Indicadores, plataformas de interações e automações de e-mail marketing também fazem parte da minha implementação e gestão.</p>
+      <div class="mw dark srv-win mac-reveal">
+        <div class="mw-tb">
+          <div class="tl"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="mw-tb-wrap"><span class="mw-tb-title">CRM</span></div>
+        </div>
+        <div class="srv-win-body">
+          <div class="srv-win-icon">🔗</div>
+          <p class="srv-win-name">CRM integrado ao comercial da empresa</p>
+          <p class="srv-win-desc">Estruturo e integro o CRM ao processo de vendas da empresa, conectando cada canal de aquisição ao funil comercial.</p>
+        </div>
       </div>
 
-      <div class="srv-card mac-reveal">
-        <span class="srv-badge">Entrega única</span>
-        <p class="srv-text">Projeto com começo, meio e entrega. Mapeio a jornada do cliente no digital, configuro as ferramentas certas, integro os canais e entrego tudo funcionando. Você e sua equipe assumem depois.</p>
-        <p class="srv-detail">Entrega única com handover completo.</p>
+      <div class="mw dark srv-win mac-reveal">
+        <div class="mw-tb">
+          <div class="tl"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="mw-tb-wrap"><span class="mw-tb-title">SEO & Presença Digital</span></div>
+        </div>
+        <div class="srv-win-body">
+          <div class="srv-win-icon">🌐</div>
+          <p class="srv-win-name">Sites com SEO otimizados e Landing pages de captura / Google Meu Negócio</p>
+          <p class="srv-win-desc">Criação e otimização de sites, landing pages e perfil no Google para gerar demanda orgânica e capturar leads qualificados.</p>
+        </div>
       </div>
 
-      <div class="srv-card mac-reveal">
-        <span class="srv-badge">Gestão de Tráfego Pago</span>
-        <p class="srv-text">Auditoria em site e aprimoramento de SEO, gestão de Meta Ads, Google Ads, TikTok Ads e LinkedIn Ads, com foco no resultado comercial. Configuração de pixels, rastreamento por origem e otimização com dado real de conversão.</p>
+      <div class="mw dark srv-win mac-reveal">
+        <div class="mw-tb">
+          <div class="tl"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="mw-tb-wrap"><span class="mw-tb-title">Plataformas</span></div>
+        </div>
+        <div class="srv-win-body">
+          <div class="srv-win-icon">⚙️</div>
+          <p class="srv-win-name">Plataformas interativas</p>
+          <p class="srv-win-desc">Ferramentas digitais que atraem, qualificam e convertem — calculadoras, simuladores e experiências que geram demanda ativa.</p>
+        </div>
+      </div>
+
+      <div class="mw dark srv-win mac-reveal">
+        <div class="mw-tb">
+          <div class="tl"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="mw-tb-wrap"><span class="mw-tb-title">Conteúdo</span></div>
+        </div>
+        <div class="srv-win-body">
+          <div class="srv-win-icon">✍️</div>
+          <p class="srv-win-name">Gestão de conteúdo</p>
+          <p class="srv-win-desc">Estratégia e produção de conteúdo alinhados ao posicionamento da marca e ao funil de aquisição de clientes.</p>
+        </div>
+      </div>
+
+      <div class="mw dark srv-win mac-reveal">
+        <div class="mw-tb">
+          <div class="tl"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="mw-tb-wrap"><span class="mw-tb-title">Métricas</span></div>
+        </div>
+        <div class="srv-win-body">
+          <div class="srv-win-icon">📊</div>
+          <p class="srv-win-name">Relatório de métricas e realinhamento de estratégia baseado em dados</p>
+          <p class="srv-win-desc">Análise contínua dos indicadores, identificação de gargalos e ajuste estratégico baseado em resultado real.</p>
+        </div>
       </div>
 
     </div>
   </div>
-
 </section>
 
 <!-- ══════════ SEÇÃO 4 — MÉTODO ══════════ -->
