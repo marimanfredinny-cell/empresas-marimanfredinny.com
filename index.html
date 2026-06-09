@@ -559,16 +559,26 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 #servicos::before{content:none;}
 #servicos .wrap{position:relative;z-index:1;flex:1;max-width:1160px;margin:0 auto;width:100%;padding:80px 24px 40px;}
 
-/* ══════ COMO TRABALHO — FULL-SCREEN ══════ */
+/* ══════ COMO TRABALHO — FULL-SCREEN HERO STYLE ══════ */
 #como-trabalho{
   position:relative;min-height:100vh;display:flex;flex-direction:column;
-  background-image:url('DSC08517.JPG');
-  background-size:cover;background-position:center 35%;
-  padding:0;overflow:hidden;
+  background:none;padding:0;overflow:hidden;
 }
-#como-trabalho::before{content:'';position:absolute;inset:0;background:rgba(20,36,44,0.82);}
+#como-trabalho::before{content:none;}
+.met-bg{position:absolute;inset:0;background-image:url('DSC08509.JPG');background-size:cover;background-position:center 30%;filter:brightness(0.58) saturate(1.1) contrast(1.05);}
+.met-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.12) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0.68) 62%,rgba(0,0,0,0.96) 100%);}
 .met-inner{position:relative;z-index:1;max-width:1160px;margin:0 auto;padding:80px 64px 40px;width:100%;}
 @media(max-width:768px){.met-inner{padding:80px 24px 40px;}}
+
+/* ══════ COMO COMEÇAR — HERO STYLE ══════ */
+#como-comecar{
+  position:relative;padding:96px 0;
+  background:none;overflow:hidden;
+}
+#como-comecar::before{content:none;}
+.cc-bg{position:absolute;inset:0;background-image:url('DSC08517.JPG');background-size:cover;background-position:center 30%;filter:brightness(0.58) saturate(1.1) contrast(1.05);}
+.cc-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.12) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0.68) 62%,rgba(0,0,0,0.96) 100%);}
+#como-comecar .cc-inner{position:relative;z-index:1;}
 
 /* ══════ COMO COMEÇAR — SINGLE COLUMN ══════ */
 .cc-inner{max-width:900px;margin:0 auto;padding:0 64px;display:flex;flex-direction:column;gap:0;}
@@ -696,7 +706,6 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   </div>
   <div class="sec-display">
     <p class="sec-display-heading">Próximo passo<br>é seu.</p>
-    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
   </div>
 </section>
 
@@ -816,14 +825,14 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     </div>
   </div>
   <div class="sec-display">
-    <p class="sec-display-heading">Quatro formas de atuar.<br>Uma direção estratégica.</p>
     <p class="sec-display-sub">Do zero ou com equipe formada, o modelo de trabalho se adapta ao momento do seu negócio.</p>
-    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
   </div>
 </section>
 
 <!-- ══════════ SEÇÃO 4 — MÉTODO ══════════ -->
 <section id="como-trabalho">
+  <div class="met-bg"></div>
+  <div class="met-overlay"></div>
   <div class="met-inner">
     <div class="met-head mac-reveal">
       <span class="eyebrow">Como trabalho</span>
@@ -886,14 +895,14 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     </div>
   </div>
   <div class="sec-display">
-    <p class="sec-display-heading">Estratégia desenhada<br>para o seu negócio.</p>
     <p class="sec-display-sub">A estratégia vem do diagnóstico. O resultado vem da estratégia.</p>
-    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
   </div>
 </section>
 
 <!-- ══════════ SEÇÃO 5 — COMO COMEÇAR ══════════ -->
 <section id="como-comecar">
+  <div class="cc-bg"></div>
+  <div class="cc-overlay"></div>
   <div class="cc-inner">
     <div class="mac-reveal">
       <span class="eyebrow">Como começar</span>
@@ -1006,9 +1015,7 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     </div>
   </div>
   <div class="sec-display" style="background:var(--an);">
-    <p class="sec-display-heading">Resultado que aparece<br>na conta bancária.</p>
     <p class="sec-display-sub">Cada case foi construído com estratégia, execução e dado real de conversão.</p>
-    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
   </div>
 </section>
 
@@ -1103,7 +1110,7 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   </div>
   <div class="sec-display" style="position:relative;z-index:2;">
     <p class="sec-display-heading">4 anos de execução.<br>Resultado real.</p>
-    <a href="/fomulario/" class="sec-handle">@marimanfredinny</a>
+    <a href="https://www.instagram.com/marimanfredinny/" target="_blank" rel="noopener" class="sec-handle">@marimanfredinny</a>
   </div>
 </section>
 
