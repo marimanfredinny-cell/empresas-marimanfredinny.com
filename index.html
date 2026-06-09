@@ -114,7 +114,7 @@ nav{
 
 /* ══════════ HERO ══════════ */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:60px;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background-image:url('IMG_7882.jpg');background-size:cover;background-position:center center;filter:brightness(0.62) saturate(1.15) contrast(1.05);}
+.hero-bg{position:absolute;inset:0;background-image:url('IMG_7882.jpg');background-size:cover;background-position:center 65%;filter:brightness(0.62) saturate(1.15) contrast(1.05);}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0.72) 65%,rgba(0,0,0,0.97) 100%);}
 .hero-inner{position:relative;z-index:2;max-width:1160px;margin:0 auto;padding:80px 24px;width:100%;display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;}
 .hero-text{max-width:580px}
@@ -545,8 +545,8 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 #hero{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;padding:0;}
 .hero-upper{
   position:relative;z-index:2;flex:1;
-  display:flex;align-items:flex-start;justify-content:space-between;gap:24px;
-  max-width:1160px;margin:0 auto;width:100%;padding:84px 64px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  max-width:1160px;margin:0 auto;width:100%;padding:80px 64px 80px;
 }
 .hero-win{flex:1;max-width:580px;}
 .hero-win-body{padding:28px 32px 32px;}
@@ -562,21 +562,23 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     gap:8px;
   }
   .hero-win{max-width:100%;width:100%;}
-  /* Notificações compactas para dar mais espaço à foto acima */
+  /* Notificações ultra-compactas — só ícone + título em linha */
   .hero-notifs{
     display:flex;
     flex-direction:column;
-    gap:6px;
+    gap:5px;
     width:100%;
   }
   .hero-notifs .notif{
     width:100%;
-    padding:8px 12px;
-    gap:9px;
+    padding:7px 11px;
+    gap:8px;
+    align-items:center;
   }
-  .hero-notifs .notif-icon{width:26px;height:26px;font-size:14px;border-radius:7px;}
-  .hero-notifs .notif-title{font-size:12px;}
-  .hero-notifs .notif-desc{font-size:10px;}
+  .hero-notifs .notif-icon{width:22px;height:22px;font-size:12px;border-radius:6px;flex-shrink:0;}
+  .hero-notifs .notif-row{display:none;}
+  .hero-notifs .notif-title{font-size:12px;font-weight:500;line-height:1.2;}
+  .hero-notifs .notif-desc{font-size:10px;color:rgba(255,255,255,0.5);}
 }
 
 /* ══════ SERVICOS — ANIMATED GRADIENT FULL-SCREEN ══════ */
@@ -708,14 +710,18 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     gap:10px !important;
   }
   .s3-head>div[style]{min-width:0 !important;}
-  /* Notif-stack: cards compactos na grade 2 colunas */
-  .notif-stack .notif{padding:10px 12px;gap:8px;width:100%;}
-  .notif-stack .notif-icon{width:26px;height:26px;font-size:13px;border-radius:7px;}
+  /* Notif-stack: iOS notification style, text recolhido à esquerda */
+  .notif-stack .notif{
+    padding:10px 12px;gap:8px;width:100%;
+    align-items:flex-start;text-align:left;
+  }
+  .notif-stack .notif-icon{width:24px;height:24px;font-size:13px;border-radius:6px;flex-shrink:0;align-self:flex-start;}
+  .notif-stack .notif-body{flex:1;min-width:0;text-align:left;}
   .notif-stack .notif-time{display:none;}
-  .notif-stack .notif-row{margin-bottom:4px;}
-  .notif-stack .notif-app{font-size:9px;}
-  .notif-stack .notif-title{font-size:12px;line-height:1.25;}
-  .notif-stack .notif-desc{font-size:10px;line-height:1.35;}
+  .notif-stack .notif-row{margin-bottom:3px;justify-content:flex-start;gap:4px;}
+  .notif-stack .notif-app{font-size:9px;font-weight:700;letter-spacing:0.06em;text-align:left;}
+  .notif-stack .notif-title{font-size:12px;font-weight:600;line-height:1.3;text-align:left;}
+  .notif-stack .notif-desc{font-size:10px;line-height:1.4;text-align:left;}
   .met-inner{padding:72px 20px 40px;}
   .met-head{margin-bottom:36px;}
   .met-notif-grid{margin-top:28px;gap:12px;}
