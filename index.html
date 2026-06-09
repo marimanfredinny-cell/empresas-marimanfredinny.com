@@ -568,7 +568,6 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     flex-direction:column;
     gap:10px;
     width:100%;
-    order:-1;
   }
   .hero-notifs .notif{width:100%;}
 }
@@ -644,6 +643,31 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 
 /* ══════════ MOBILE — CORREÇÕES COMPLETAS ══════════ */
 
+/* ── Animações slide das notificações ── */
+@keyframes notif-from-right{
+  0%{opacity:0;transform:translateX(56px);}
+  100%{opacity:1;transform:translateX(0);}
+}
+@keyframes notif-from-left{
+  0%{opacity:0;transform:translateX(-56px);}
+  100%{opacity:1;transform:translateX(0);}
+}
+@media(max-width:900px){
+  /* Bypass mac-reveal no container — cada notif anima individualmente */
+  .hero-notifs.mac-reveal,.hero-notifs.mac-reveal.visible{
+    opacity:1 !important;transform:none !important;transition:none !important;
+  }
+  .hero-notifs .notif:nth-child(1){
+    animation:notif-from-right 0.6s cubic-bezier(0.25,0.46,0.45,0.94) 0.7s both;
+  }
+  .hero-notifs .notif:nth-child(2){
+    animation:notif-from-left 0.6s cubic-bezier(0.25,0.46,0.45,0.94) 1.0s both;
+  }
+  .hero-notifs .notif:nth-child(3){
+    animation:notif-from-right 0.6s cubic-bezier(0.25,0.46,0.45,0.94) 1.3s both;
+  }
+}
+
 /* ── Título da barra das janelas: quebra linha, não trunca ── */
 @media(max-width:900px){
   .mw-tb,.muda-tb{height:auto;min-height:44px;padding:10px 16px;align-items:center;}
@@ -668,9 +692,14 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   .hero-ctas{flex-direction:column;gap:10px;}
   .hero-ctas .btn-primary,.hero-ctas .btn-secondary{width:100%;justify-content:center;}
   #servicos .wrap{padding:72px 20px 40px;}
-  /* Serviços: título e notif-stack em coluna, full width */
+  /* Serviços: título em cima full-width, cards lado a lado centralizados */
   .s3-head{flex-direction:column !important;align-items:stretch !important;gap:20px;}
-  .notif-stack{padding-top:0 !important;width:100%;}
+  .notif-stack{
+    padding-top:0 !important;width:100%;
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:10px !important;
+  }
   .s3-head>div[style]{min-width:0 !important;}
   .met-inner{padding:72px 20px 40px;}
   .met-head{margin-bottom:36px;}
@@ -767,7 +796,8 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 .ham-btn.open span:nth-child(2){opacity:0;transform:scaleX(0);}
 .ham-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
 @media(max-width:900px){
-  .nav-logo{display:none;}
+  .nav-logo{display:inline !important;font-size:13px;}
+  .nav-mob .nav-cta{display:none;}
   .ham-btn{display:flex;}
 }
 .mob-nav-overlay{
