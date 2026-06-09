@@ -558,18 +558,25 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   .hero-upper{
     flex-direction:column;
     justify-content:flex-end;
-    padding:80px 20px 32px;
-    gap:12px;
+    padding:80px 20px 8px;
+    gap:8px;
   }
   .hero-win{max-width:100%;width:100%;}
-  /* Notificações acima da janela, em linha rolável */
+  /* Notificações compactas para dar mais espaço à foto acima */
   .hero-notifs{
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:6px;
     width:100%;
   }
-  .hero-notifs .notif{width:100%;}
+  .hero-notifs .notif{
+    width:100%;
+    padding:8px 12px;
+    gap:9px;
+  }
+  .hero-notifs .notif-icon{width:26px;height:26px;font-size:14px;border-radius:7px;}
+  .hero-notifs .notif-title{font-size:12px;}
+  .hero-notifs .notif-desc{font-size:10px;}
 }
 
 /* ══════ SERVICOS — ANIMATED GRADIENT FULL-SCREEN ══════ */
@@ -701,6 +708,14 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     gap:10px !important;
   }
   .s3-head>div[style]{min-width:0 !important;}
+  /* Notif-stack: cards compactos na grade 2 colunas */
+  .notif-stack .notif{padding:10px 12px;gap:8px;width:100%;}
+  .notif-stack .notif-icon{width:26px;height:26px;font-size:13px;border-radius:7px;}
+  .notif-stack .notif-time{display:none;}
+  .notif-stack .notif-row{margin-bottom:4px;}
+  .notif-stack .notif-app{font-size:9px;}
+  .notif-stack .notif-title{font-size:12px;line-height:1.25;}
+  .notif-stack .notif-desc{font-size:10px;line-height:1.35;}
   .met-inner{padding:72px 20px 40px;}
   .met-head{margin-bottom:36px;}
   .met-notif-grid{margin-top:28px;gap:12px;}
@@ -1483,7 +1498,7 @@ function toggleFaq(btn){btn.closest('.faq-item').classList.toggle('open')}
 })();
 
 /* ── Mobile nav hamburguer ── */
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
   var btn=document.getElementById('ham-btn');
   var ov=document.getElementById('mob-nav-overlay');
   if(!btn||!ov)return;
@@ -1499,7 +1514,7 @@ function toggleFaq(btn){btn.closest('.faq-item').classList.toggle('open')}
       document.body.style.overflow='';
     });
   });
-})();
+});
 /* ── macOS section reveal ── */
 (function(){
   var els = document.querySelectorAll('.mac-reveal');
