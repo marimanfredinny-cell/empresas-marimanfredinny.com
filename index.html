@@ -565,20 +565,12 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   /* Notificações acima da janela, em linha rolável */
   .hero-notifs{
     display:flex;
-    flex-direction:row;
-    flex-wrap:nowrap;
-    overflow-x:auto;
+    flex-direction:column;
     gap:10px;
-    padding-bottom:4px;
+    width:100%;
     order:-1;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
   }
-  .hero-notifs::-webkit-scrollbar{display:none;}
-  .hero-notifs .notif{
-    min-width:240px;
-    flex-shrink:0;
-  }
+  .hero-notifs .notif{width:100%;}
 }
 
 /* ══════ SERVICOS — ANIMATED GRADIENT FULL-SCREEN ══════ */
@@ -676,7 +668,10 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   .hero-ctas{flex-direction:column;gap:10px;}
   .hero-ctas .btn-primary,.hero-ctas .btn-secondary{width:100%;justify-content:center;}
   #servicos .wrap{padding:72px 20px 40px;}
-  .s3-head{margin-bottom:40px;}
+  /* Serviços: título e notif-stack em coluna, full width */
+  .s3-head{flex-direction:column !important;align-items:stretch !important;gap:20px;}
+  .notif-stack{padding-top:0 !important;width:100%;}
+  .s3-head>div[style]{min-width:0 !important;}
   .met-inner{padding:72px 20px 40px;}
   .met-head{margin-bottom:36px;}
   .met-notif-grid{margin-top:28px;gap:12px;}
@@ -757,6 +752,52 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   .footer-inner{padding:0 16px;}
   .footer-bottom{padding:16px 16px 0;}
 }
+
+/* ══════════ HAMBURGUER — MENU MOBILE ══════════ */
+.ham-btn{
+  display:none;background:none;border:none;cursor:pointer;
+  padding:8px 4px;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+}
+.ham-btn span{
+  display:block;width:22px;height:1.5px;
+  background:rgba(255,255,255,0.9);border-radius:2px;
+  transition:transform 0.25s ease,opacity 0.25s ease;
+}
+.ham-btn.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.ham-btn.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.ham-btn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+@media(max-width:900px){
+  .nav-logo{display:none;}
+  .ham-btn{display:flex;}
+}
+.mob-nav-overlay{
+  display:none;
+  position:fixed;top:60px;left:0;right:0;bottom:0;
+  z-index:98;
+  background:rgba(20,36,44,0.97);
+  backdrop-filter:blur(40px) saturate(200%) brightness(1.04);
+  -webkit-backdrop-filter:blur(40px) saturate(200%) brightness(1.04);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+.mob-nav-overlay.open{display:block;}
+.mob-nav-list{padding:36px 24px 80px;display:flex;flex-direction:column;gap:0;}
+.mob-nav-list a{
+  font-size:22px;font-weight:200;letter-spacing:-0.015em;
+  color:rgba(255,255,255,0.72);
+  padding:16px 0;
+  border-bottom:0.5px solid rgba(255,255,255,0.08);
+  text-decoration:none;display:block;
+  transition:color 0.15s;
+}
+.mob-nav-list a:active,.mob-nav-list a:hover{color:#fff;}
+.mob-nav-list .mob-cta{
+  margin-top:28px;
+  padding:16px 20px;font-size:15px;font-weight:400;
+  text-align:center;
+  background:rgba(255,255,255,0.1);
+  border:0.5px solid rgba(255,255,255,0.22);border-radius:14px;
+  color:#fff;
+}
 </style>
 </head>
 <body>
@@ -777,6 +818,9 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     </div>
     <div class="nav-mob">
       <a href="/fomulario/" class="nav-cta">Marcar uma conversa</a>
+      <button class="ham-btn" id="ham-btn" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <a href="/fomulario/" class="nav-cta" id="nav-cta-d" style="display:none">Marcar uma conversa</a>
   </div>
@@ -1408,6 +1452,24 @@ function toggleFaq(btn){btn.closest('.faq-item').classList.toggle('open')}
   obs.observe(win);
 })();
 
+/* ── Mobile nav hamburguer ── */
+(function(){
+  var btn=document.getElementById('ham-btn');
+  var ov=document.getElementById('mob-nav-overlay');
+  if(!btn||!ov)return;
+  btn.addEventListener('click',function(){
+    var open=ov.classList.toggle('open');
+    btn.classList.toggle('open');
+    document.body.style.overflow=open?'hidden':'';
+  });
+  ov.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      ov.classList.remove('open');
+      btn.classList.remove('open');
+      document.body.style.overflow='';
+    });
+  });
+})();
 /* ── macOS section reveal ── */
 (function(){
   var els = document.querySelectorAll('.mac-reveal');
@@ -1425,5 +1487,20 @@ function toggleFaq(btn){btn.closest('.faq-item').classList.toggle('open')}
   });
 })();
 </script>
+
+<!-- ══════════ MOBILE NAV OVERLAY ══════════ -->
+<div class="mob-nav-overlay" id="mob-nav-overlay">
+  <div class="mob-nav-list">
+    <a href="#servicos">Serviços</a>
+    <a href="#como-trabalho">Como trabalho</a>
+    <a href="#como-comecar">Como começar</a>
+    <a href="#cases">Cases</a>
+    <a href="#para-quem">Pra minha empresa?</a>
+    <a href="#quem-sou">Quem sou eu</a>
+    <a href="/blog/">Blog</a>
+    <a href="#faq">FAQ</a>
+    <a href="/fomulario/" class="mob-cta">Marcar uma conversa →</a>
+  </div>
+</div>
 </body>
 </html>
