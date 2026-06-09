@@ -617,6 +617,101 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 .blog-card-title{font-size:15px;font-weight:500;color:var(--an);line-height:1.45;}
 .blog-card-arrow{font-size:13px;color:var(--ac);margin-top:auto;}
 @media(max-width:680px){.blog-grid{grid-template-columns:1fr}}
+
+/* ══════════ MOBILE — CORREÇÕES COMPLETAS ══════════ */
+
+/* Impede overflow do título na barra das janelas macOS */
+.mw-tb-title,.muda-tb-title{
+  max-width:calc(100% - 72px);
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* ── Tablet / telefone grande (≤768px) ── */
+@media(max-width:768px){
+  section{padding:72px 0;}
+  .hero-win-body{padding:20px 22px 24px;}
+  .hero-win-body .hero-h1{font-size:15px;line-height:1.45;}
+  #servicos .wrap{padding:72px 20px 40px;}
+  .s3-head{margin-bottom:40px;}
+  .met-inner{padding:72px 20px 40px;}
+  .met-head{margin-bottom:36px;}
+  .met-notif-grid{margin-top:28px;gap:12px;}
+  #como-comecar{padding:72px 0;}
+  .sobre-inner{padding:72px 20px;}
+  .pq-interactive{padding:22px 20px;}
+  .pq-interactive-body{flex-direction:column;}
+  .cases-inner{padding:0 20px;}
+  .pq-inner{padding:0 20px;}
+  .faq-inner{padding:0 20px;}
+  .blog-inner{padding:0 20px;}
+  .footer-inner{padding:0 20px;}
+  .footer-bottom{padding:20px 20px 0;}
+}
+
+/* ── Telefone pequeno (≤480px) ── */
+@media(max-width:480px){
+  section{padding:56px 0;}
+
+  /* Nav */
+  .nav-inner{padding:0 18px;}
+
+  /* Hero */
+  .hero-upper{padding:68px 18px 24px;}
+  .hero-win-body{padding:16px 18px 20px;}
+  .hero-win-body .hero-h1{font-size:14px;line-height:1.5;margin:8px 0 16px;}
+  .hero-ctas{flex-direction:column;gap:10px;}
+  .hero-ctas .btn-primary,.hero-ctas .btn-secondary{width:100%;justify-content:center;}
+
+  /* O que muda */
+  .muda-outer{padding:0 16px;}
+  .muda-body{padding:20px 16px 24px;}
+
+  /* Serviços */
+  #servicos .wrap{padding:56px 18px 36px;}
+  .s3-head{margin-bottom:32px;}
+  .srv-card{padding:22px 18px;}
+
+  /* Como Trabalho */
+  .met-inner{padding:56px 18px 36px;}
+  .met-notif-title{font-size:13px;}
+  .met-notif-text{font-size:11px;}
+  .met-notif-ico{width:32px;height:32px;font-size:16px;}
+
+  /* Como Começar */
+  #como-comecar{padding:56px 0;}
+  .cc-inner{padding:0 18px;}
+  .cc-box{padding:18px 20px;}
+  .cc-box-text{font-size:14px;}
+
+  /* Cases */
+  .cases-inner{padding:0 16px;}
+  .case-card-photo{height:160px;}
+  .case-card-body{padding:16px 18px;}
+  .case-title{font-size:15px;}
+  .case-text{font-size:12px;}
+
+  /* Para quem */
+  .pq-inner{padding:0 16px;}
+  .pq-card{padding:22px;}
+  .pq-card-text{font-size:14px;}
+  .pq-interactive{padding:20px 18px;}
+
+  /* Quem sou */
+  .sobre-inner{padding:56px 16px;}
+  .sobre-text{font-size:14px;}
+
+  /* FAQ */
+  .faq-inner{padding:0 16px;}
+  .faq-q{font-size:14px;padding:16px 18px;}
+
+  /* Blog */
+  .blog-inner{padding:0 16px;}
+
+  /* Footer */
+  .footer-inner{padding:0 16px;}
+  .footer-bottom{padding:16px 16px 0;}
+}
 </style>
 </head>
 <body>
@@ -949,9 +1044,8 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
     <div class="cases-grid">
 
       <div class="case-card mac-reveal">
-        <div class="case-card-photo" style="background-image:url('DSC08592.JPG')">
+        <div class="case-card-photo" style="background-image:url('Captura%20de%20tela%202026-06-08%20231547.png');background-position:center top;">
           <div class="case-card-photo-overlay"></div>
-          <img src="concept-rio-logo.png" alt="Concept Rio" style="position:absolute;bottom:16px;left:20px;height:32px;object-fit:contain;filter:brightness(0) invert(1);opacity:0.85;" onerror="this.style.display='none'">
         </div>
         <div class="case-card-body">
           <p class="case-client">Concept Rio — Imobiliária</p>
