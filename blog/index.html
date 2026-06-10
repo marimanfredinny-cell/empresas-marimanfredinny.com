@@ -42,13 +42,20 @@
     .ft-copy{width:100%;font-size:11px;color:rgba(184,200,204,0.28);letter-spacing:0.02em}
     .wpp{position:fixed;bottom:28px;right:28px;z-index:999;width:52px;height:52px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:transform .2s}
     .wpp:hover{transform:translateY(-3px) scale(1.05)}
-    .blog-header{padding:120px 5vw 80px;position:relative;overflow:hidden;text-align:center}
-    .blog-header::before{content:'';position:absolute;inset:0;background-image:url('fundo hero mobile and desktop.jpg');background-size:cover;background-position:center;filter:brightness(0.52) saturate(1.1);}
-    .blog-header::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,rgba(20,36,44,0.7) 60%,rgba(20,36,44,0.98) 100%);}
-    .blog-header h1,.blog-header .subtitle,.blog-header .tagline{position:relative;z-index:1;}
-    .blog-header h1{font-size:clamp(48px,7vw,88px);font-weight:200;letter-spacing:-0.04em;color:#fff;line-height:1.0;margin-bottom:16px}
-    .blog-header .subtitle{font-size:clamp(18px,2.5vw,28px);font-weight:300;color:rgba(184,200,204,0.7);letter-spacing:-0.02em;margin-bottom:8px}
-    .blog-header .tagline{font-size:13px;font-weight:400;color:rgba(184,200,204,0.4);letter-spacing:0.06em;text-transform:uppercase}
+    /* ── Blog Hero ── */
+    .blog-header{padding:100px 5vw 72px;background:var(--an);display:flex;align-items:center;justify-content:center;}
+    /* ── macOS window ── */
+    .mac-win{max-width:640px;width:100%;background:rgba(255,255,255,0.07);backdrop-filter:blur(40px) saturate(200%) brightness(1.06);-webkit-backdrop-filter:blur(40px) saturate(200%) brightness(1.06);border-radius:14px;border:0.5px solid rgba(255,255,255,0.17);box-shadow:inset 0 1.5px 0 rgba(255,255,255,0.3),inset 0 -0.5px 0 rgba(255,255,255,0.04),0 32px 80px rgba(0,0,0,0.32);overflow:hidden;}
+    .mac-tb{height:44px;background:rgba(255,255,255,0.06);border-bottom:0.5px solid rgba(255,255,255,0.1);display:flex;align-items:center;padding:0 16px;gap:12px;position:relative;}
+    .mac-tl{display:flex;align-items:center;gap:7px;}
+    .mac-tl span{width:13px;height:13px;border-radius:50%;}
+    .mac-tl .r{background:#FF5F57} .mac-tl .y{background:#FFBD2E} .mac-tl .g{background:#28C840}
+    .mac-tb-title{font-size:13px;font-weight:500;color:rgba(255,255,255,0.45);position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;}
+    .mac-body{padding:36px 40px 44px;}
+    .mac-eyebrow{display:inline-block;font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#B8C8CC;margin-bottom:16px;}
+    .mac-h1{font-size:clamp(36px,5vw,64px);font-weight:200;letter-spacing:-0.04em;color:#fff;line-height:1.05;margin-bottom:14px;}
+    .mac-sub{font-size:clamp(14px,1.6vw,17px);font-weight:300;color:rgba(184,200,204,0.65);line-height:1.6;}
+    @media(max-width:600px){.mac-body{padding:24px 22px 32px;}.mac-tb-title{font-size:11px;}}
     .social-section{background:#1E3540;padding:72px 5vw;text-align:center;border-top:0.5px solid rgba(255,255,255,0.07);}
     .social-section h2{font-size:clamp(20px,2.5vw,28px);font-weight:200;letter-spacing:-0.02em;color:#fff;margin-bottom:8px;}
     .social-section p{font-size:14px;color:rgba(184,200,204,0.5);margin-bottom:36px;}
@@ -87,9 +94,17 @@
   </nav>
 
   <header class="blog-header">
-    <h1>Blog.</h1>
-    <p class="subtitle">Marketing que fecha negócio.</p>
-    <p class="tagline">Tráfego, automação e estratégia.</p>
+    <div class="mac-win">
+      <div class="mac-tb">
+        <div class="mac-tl"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+        <span class="mac-tb-title">Blog — Mari Manfredinny</span>
+      </div>
+      <div class="mac-body">
+        <span class="mac-eyebrow">Tráfego · Automação · Estratégia</span>
+        <h1 class="mac-h1">Marketing que fecha negócio.</h1>
+        <p class="mac-sub">Conteúdo direto ao ponto para empresas que querem demanda real — sem enrolação.</p>
+      </div>
+    </div>
   </header>
 
   <section class="blog-grid-section">
