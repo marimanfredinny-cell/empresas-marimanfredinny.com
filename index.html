@@ -364,8 +364,8 @@ nav{
 .pq-interactive-text{flex:1;min-width:240px;}
 .pq-interactive-title{font-size:16px;font-weight:500;color:var(--an);margin-bottom:10px;line-height:1.45;}
 .pq-interactive-sub{font-size:13px;font-weight:300;color:var(--aa);line-height:1.65;}
-.pq-interactive-sub li{list-style:none;padding-left:14px;position:relative;margin-bottom:4px;}
-.pq-interactive-sub li::before{content:'—';position:absolute;left:0;color:var(--ac);}
+.pq-interactive-sub li{list-style:none;padding-left:18px;position:relative;margin-bottom:4px;}
+.pq-interactive-sub li::before{content:'—';position:absolute;left:0;color:var(--ac);font-size:0.9em;top:1px;}
 .pq-interactive-links{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-start;}
 .pq-disclaimer{
   font-size:12px;font-weight:400;color:var(--aa);
@@ -835,64 +835,69 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
 }
 /* ══════════ MOBILE FONT SCALE (≤768px) ══════════ */
 @media(max-width:768px){
-  /* Títulos de seção */
+  /* Hero — mantém tamanho aprovado */
   .hero-h1{font-size:clamp(44px,11vw,62px);}
   .hero-sub{font-size:clamp(22px,5vw,28px);}
-  .muda-h2{font-size:clamp(36px,9vw,48px);}
-  .s3-h2,.met-h2,.cc-h2,.faq-h2,.pq-h2{font-size:clamp(38px,9vw,50px);}
+
+  /* O que muda — reverte para tamanho original */
+
+  /* Seções: serviços, como trabalho, como começar */
+  .s3-h2,.met-h2,.cc-h2{font-size:clamp(38px,9vw,50px);}
+
+  /* Pra quem é — título pequeno conforme solicitado */
+  .pq-h2{font-size:18px;}
+
+  /* Cases e blog */
   .cases-h2,.blog-h2{font-size:clamp(36px,9vw,48px);}
+
+  /* Sobre */
   .sobre-h2{font-size:clamp(42px,10vw,56px);}
 
-  /* Corpo de seção */
-  .s3-lead,.met-lead,.cc-lead{font-size:22px;line-height:1.6;}
-  .sobre-text{font-size:22px;line-height:1.65;}
-  .cc-box-text{font-size:22px;}
-
-  /* Cards de serviço */
+  /* Corpo — serviços */
+  .s3-lead{font-size:22px;line-height:1.6;}
   .srv-win-name{font-size:22px;}
   .srv-win-desc{font-size:18px;}
 
-  /* Como trabalho — steps */
-  .step-title{font-size:26px;}
-  .step-text{font-size:20px;}
+  /* Como trabalho — 18px */
+  .met-h2{font-size:clamp(38px,9vw,50px);}
+  .met-lead{font-size:18px;line-height:1.6;}
+  .step-title{font-size:18px;}
+  .step-text{font-size:18px;}
+  .met-notif-title{font-size:18px;}
+  .met-notif-text{font-size:15px;}
 
   /* Como começar */
+  .cc-lead{font-size:22px;line-height:1.6;}
   .cc-step-title{font-size:26px;}
   .cc-step-text{font-size:20px;}
   .cc-card-title{font-size:30px;}
-  .cc-card-text{font-size:20px;}
-
-  /* Cases */
-  .case-title{font-size:26px;}
-  .case-text{font-size:20px;}
-  .case-number{font-size:48px;}
-  .case-number-label{font-size:15px;}
+  .cc-card-text{font-size:15px;}
+  .cc-box-text{font-size:22px;}
 
   /* Para quem */
   .pq-card-text{font-size:22px;}
-  .pq-interactive-title{font-size:24px;}
-  .pq-interactive-sub{font-size:18px;}
+  .pq-interactive-title{font-size:15px;}
+  .pq-interactive-sub{font-size:15px;}
+  .pq-interactive-sub li{padding-left:22px;}
 
-  /* Números — Sobre */
+  /* Sobre — texto 15px */
+  .sobre-text{font-size:15px;line-height:1.7;}
   .sobre-num-big{font-size:54px;}
   .sobre-num-label{font-size:16px;}
 
-  /* FAQ */
-  .faq-q{font-size:22px !important;padding:20px 22px;}
-  .faq-a{font-size:18px;padding:0 22px 22px;}
+  /* FAQ — tamanho reduzido */
+  .faq-h2{font-size:clamp(24px,6vw,34px);}
+  .faq-q{font-size:15px !important;padding:18px 20px;}
+  .faq-a{font-size:14px !important;padding:0 20px 18px;}
 
   /* Blog */
   .blog-card-title{font-size:20px;}
   .blog-card-tag{font-size:13px;}
 
-  /* Notificações do hero */
+  /* Notificações hero */
   .hero-notifs .notif-title{font-size:18px !important;}
   .hero-notifs .notif-desc{font-size:15px !important;}
   .hero-notifs .notif-icon{width:42px !important;height:42px !important;font-size:20px !important;}
-
-  /* Notificações Como Trabalho */
-  .met-notif-title{font-size:20px;}
-  .met-notif-text{font-size:16px;}
 
   /* Ticker */
   .ticker-item{font-size:22px;}
@@ -907,6 +912,9 @@ footer{background:rgba(0,0,0,0.4);backdrop-filter:blur(20px);border-top:0.5px so
   .footer-links a{font-size:17px;}
   .footer-email{font-size:16px;}
   .footer-bottom{font-size:14px;}
+
+  /* Sobre — corrige zoom da foto no mobile */
+  .sobre-bg{background-position:center top;background-size:cover;}
 }
 </style>
 </head>
